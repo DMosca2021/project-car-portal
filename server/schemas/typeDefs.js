@@ -46,19 +46,20 @@ const typeDefs = gql`
     user: User
   }
 
+ 
   type Query {
     projects(vehicle: ID, name: String): [Project]
     project(_id: ID!): Project
     user: User
-    transaction(_id: ID!): Order
+    transaction(_id: ID!): Transaction
     checkout(products: [ID]!): Checkout
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addOrder(products: [ID]!): Order
+    addTransaction(products: [ID]!): Transaction
     updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateProduct(_id: ID!, quantity: Int!): Product
+    updateProject(_id: ID!, quantity: Int!): Project
     login(email: String!, password: String!): Auth
   }
 `;
