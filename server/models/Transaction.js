@@ -1,3 +1,5 @@
+// Borrowed from Budget Tracker, using it for the transactions when parts/labor are included with budget
+
 const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
