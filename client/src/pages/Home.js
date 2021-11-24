@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="container">
       {/* <CategoryMenu /> */}
-      {/* <ProductList /> */}
+      {/* <ProductList />  <-- This is going to go on the Current projects page */}
       {/* <Cart /> */}
     </div>
   );

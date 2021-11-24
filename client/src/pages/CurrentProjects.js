@@ -17,6 +17,7 @@ function CurrentProjects() {
       <div className="container my-1">
         <Link to="/">← Back to Home</Link>
 
+      {/* Need to change order to projects, each project needs to show in its own card with info about it. When clicked then it will bring you to that project page. Also going to need to add a new project form and a delete option.  */}
         {user ? (
           <>
             <h2>
