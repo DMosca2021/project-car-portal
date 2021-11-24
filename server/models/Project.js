@@ -20,8 +20,7 @@ const projectSchema = new Schema({
     },
     budget: {
       type: Number,
-      required: true,
-      min: 0.99
+      required: true
     },
     timeSpent: {
       type: Number,
