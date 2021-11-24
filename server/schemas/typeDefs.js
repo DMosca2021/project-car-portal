@@ -16,7 +16,7 @@ const typeDefs = gql`
     description: String
     image: String
     budget: Int
-    timeSpent: Float
+    timeSpent: Int
     vehicle: Vehicle
   }
 
