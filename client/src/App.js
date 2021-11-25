@@ -1,11 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
@@ -42,8 +37,8 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          <StoreProvider>
-            <Nav />
+          <StoreProvider> {/* Change this name to the "ProjectProvider" to make more sense with theme of project */}
+            <Nav /> {/* If we want to add a drop down menu or change to side bar menu must do inside Nav component This shows on all pages, add footer in opposite location for same effect */}
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
