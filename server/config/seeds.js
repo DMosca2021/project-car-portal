@@ -11,6 +11,8 @@ db.once("open", async () => {
     model: "Beetle",
   });
 
+  console.log("vehicles Seeded")
+
   await Project.deleteMany();
   await Project.insertMany([
     {
