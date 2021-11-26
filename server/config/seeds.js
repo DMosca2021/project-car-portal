@@ -3,19 +3,26 @@ const { User, Project, Vehicle } = require("../models");
 
 db.once("open", async () => {
   
+  await Vehicle.deleteMany();
+  const vehicle = await Vehicle.create({
+    type: "Car",
+    year: 1999,
+    make: "Volkswagen",
+    model: "Beetle",
+  });
 
+  await Project.deleteMany();
+  await Project.insertMany([
+    {
+      name: "Devins first project car",
+      description: "Some test info to check my backend",
+      budget: 10000,
+      timeSpent: 40,
+      vehicle: vehicle,
+    }
+  ]);
 
-  // await Project.deleteMany();
-  // await Project.insertMany([
-  //   {
-  //     name: "Devins first project car",
-  //     description: "Some test info to check my backend",
-  //     budget: 10000,
-  //     timeSpent: 40,
-  //   },
-  // ]);
-
-  // console.log("projects seeded");
+  console.log("projects seeded");
 
   await User.deleteMany();
 
