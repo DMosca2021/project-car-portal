@@ -6,10 +6,10 @@ const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 const resolvers = {
   Query: {
     projects: async () => {
-      return await Project.find({});
+      return await Project.find({}).populate('vehicle');
     },
     // project: async (parent, { _id }) => {
-    //   return await Product.findById(_id).populate('category');
+    //   return await Product.findById(_id).populate('vehicle');
     // },
     user: async (parent, args, context) => {
       if (context.user) {

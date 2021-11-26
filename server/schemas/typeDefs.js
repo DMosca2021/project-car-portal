@@ -28,7 +28,7 @@ const typeDefs = gql`
     model: String
     trimLvl: String
     engineDisp: Int
-    transaction: Transaction
+    transactions: [Transaction]
   }
 
   type Transaction {
@@ -53,12 +53,12 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addProject
-    addVehicle
+    # addProject
+    # addVehicle
     addTransaction(products: [ID]!): Transaction
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProject(_id: ID!, quantity: Int!): Project
-    updateVehicle
+    # updateVehicle
     login(email: String!, password: String!): Auth
   }
 `;
