@@ -28,6 +28,7 @@ const typeDefs = gql`
     model: String
     trimLvl: String
     engineDisp: Int
+    transaction: Transaction
   }
 
   type Transaction {
@@ -37,29 +38,27 @@ const typeDefs = gql`
     date: String
   }
 
-  type Checkout {
-    session: ID
-  }
-
   type Auth {
     token: ID
     user: User
   }
 
- 
   type Query {
-    projects: [Project]
-    project(_id: ID!): Project
     user: User
-    transaction(_id: ID!): Transaction
-    checkout(products: [ID]!): Checkout
+    users: [User]
+    project(_id: ID!): Project
+    projects: [Project]
+    transactions: [Transaction]
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    addProject
+    addVehicle
     addTransaction(products: [ID]!): Transaction
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProject(_id: ID!, quantity: Int!): Project
+    updateVehicle
     login(email: String!, password: String!): Auth
   }
 `;
