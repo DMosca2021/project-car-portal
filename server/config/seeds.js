@@ -14,7 +14,7 @@ db.once("open", async () => {
   console.log("vehicles Seeded")
 
   await Project.deleteMany();
-  await Project.insertMany([
+  const projects = await Project.insertMany([
     {
       name: "Devins first project car",
       description: "Some test info to check my backend",
@@ -33,6 +33,7 @@ db.once("open", async () => {
     lastName: "Holt",
     email: "eholt@testmail.com",
     password: "password12345",
+    project: projects,
   });
 
   console.log("users seeded");
