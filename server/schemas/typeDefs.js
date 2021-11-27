@@ -77,7 +77,7 @@ const typeDefs = gql`
     # addTransaction(products: [ID]!): Transaction
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProject(_id: ID!, name: String, description: String, image: String, budget: Int, timeSpent: Float): Project
-    updateVehicle(type: String, year: Int, make: String, model: String, trimLvl: String, engineDisp: Int)
+    updateVehicle(type: String, year: Int, make: String, model: String, trimLvl: String, engineDisp: Int): Vehicle 
     login(email: String!, password: String!): Auth
   }
 `;
