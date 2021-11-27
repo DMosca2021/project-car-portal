@@ -17,9 +17,9 @@ const resolvers = {
     projects: async () => {
       return await Project.find({}).populate('vehicle');
     },
-    // project: async (parent, { _id }) => {
-    //   return await Product.findById(_id).populate('vehicle');
-    // },
+    project: async (parent, { _id }) => {
+      return await Product.findById(_id).populate('vehicle');
+    },
     // transaction: async (parent, { _id }, context) => {
     //   if (context.user) {
     //     const user = await User.findById(context.user._id).populate({

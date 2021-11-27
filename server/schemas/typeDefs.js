@@ -24,11 +24,11 @@ const typeDefs = gql`
   }
 
   type Vehicle {
-    _id: ID
-    type: String
-    year: Int
-    make: String
-    model: String
+    _id: ID!
+    type: String!
+    year: Int!
+    make: String!
+    model: String!
     trimLvl: String
     engineDisp: Int
     
@@ -36,16 +36,16 @@ const typeDefs = gql`
 
   type Transaction {
     _id: ID!
-    name: String
-    value: Int
-    date: String
+    name: String!
+    value: Int!
+    date: String!
   }
 
   type Note{
     _id: ID!
-    title: String
-    content: String
-    createdOn: String
+    title: String!
+    content: String!
+    createdOn: String!
   }
 
   type Todo{
@@ -55,8 +55,8 @@ const typeDefs = gql`
   }
 
   type Auth {
-    token: ID
-    user: User
+    token: ID!
+    user: User!
   }
 
   type Query {
@@ -64,17 +64,20 @@ const typeDefs = gql`
     users: [User]
     project(_id: ID!): Project
     projects: [Project]
+    vehicle: Vehicle
     transactions: [Transaction]
+    notes: [Note]
+    todos: [Todo]
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    # addProject
-    # addVehicle
-    addTransaction(products: [ID]!): Transaction
+    addProject(projectDate: String!, name: String!, description: String, image: String, budget: Int, timeSpent: Float): Project
+    addVehicle(type: String!, year: Int!, make: String!, model: String!, trimLvl: String, engineDisp: Int): Vehicle
+    # addTransaction(products: [ID]!): Transaction
     updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateProject(_id: ID!, quantity: Int!): Project
-    # updateVehicle
+    updateProject(_id: ID!, name: String, description: String, image: String, budget: Int, timeSpent: Float): Project
+    updateVehicle(type: String, year: Int, make: String, model: String, trimLvl: String, engineDisp: Int)
     login(email: String!, password: String!): Auth
   }
 `;
