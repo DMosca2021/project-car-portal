@@ -10,7 +10,7 @@ const typeDefs = gql`
   }
 
   type Project {
-    _id: ID!
+    _id: ID
     projectDate: String!
     name: String!
     description: String
@@ -62,7 +62,7 @@ const typeDefs = gql`
   type Query {
     user: User
     users: [User]
-    project(_id: ID!): Project
+    project: Project
     projects: [Project]
     vehicle: Vehicle
     transactions: [Transaction]
