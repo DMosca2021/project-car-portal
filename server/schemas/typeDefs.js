@@ -2,22 +2,25 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type User {
-    _id: ID
-    firstName: String
-    lastName: String
-    email: String
+    _id: ID!
+    firstName: String!
+    lastName: String!
+    email: String!
     projects: [Project]
   }
 
   type Project {
-    _id: ID
-    projectDate: String
-    name: String
+    _id: ID!
+    projectDate: String!
+    name: String!
     description: String
     image: String
     budget: Int
-    timeSpent: Int
+    timeSpent: Float
     vehicle: Vehicle
+    transactions: [Transaction]
+    todos: [Todo]
+    notes: [Note]
   }
 
   type Vehicle {
@@ -28,21 +31,27 @@ const typeDefs = gql`
     model: String
     trimLvl: String
     engineDisp: Int
-    transactions: [Transaction]
+    
   }
 
   type Transaction {
-    _id: ID
+    _id: ID!
     name: String
     value: Int
     date: String
   }
 
   type Note{
-    _id: ID
+    _id: ID!
     title: String
     content: String
     createdOn: String
+  }
+
+  type Todo{
+    _id: ID!
+    content: String!
+    isComplete: Boolean!
   }
 
   type Auth {

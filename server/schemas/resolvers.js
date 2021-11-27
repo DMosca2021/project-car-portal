@@ -5,12 +5,6 @@ const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
-    projects: async () => {
-      return await Project.find({}).populate('vehicle');
-    },
-    // project: async (parent, { _id }) => {
-    //   return await Product.findById(_id).populate('vehicle');
-    // },
     user: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id);
@@ -20,6 +14,12 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    projects: async () => {
+      return await Project.find({}).populate('vehicle');
+    },
+    // project: async (parent, { _id }) => {
+    //   return await Product.findById(_id).populate('vehicle');
+    // },
     // transaction: async (parent, { _id }, context) => {
     //   if (context.user) {
     //     const user = await User.findById(context.user._id).populate({
