@@ -38,6 +38,13 @@ const typeDefs = gql`
     date: String
   }
 
+  type Note{
+    _id: ID
+    title: String
+    content: String
+    createdOn: String
+  }
+
   type Auth {
     token: ID
     user: User
