@@ -51,6 +51,7 @@ const typeDefs = gql`
   type Todo{
     _id: ID!
     content: String!
+    createdOn: String!
     isComplete: Boolean!
   }
 
