@@ -61,14 +61,15 @@ const typeDefs = gql`
   }
 
   type Query {
-    user: User
-    users: [User]
-    project: Project
-    projects: [Project]
-    vehicle: Vehicle
-    transactions: [Transaction]
-    notes: [Note]
-    todos: [Todo]
+    user(email: String!): User
+    users: [User] # This query works -- Resolver Works
+    getProjects: [Project] # This query works -- Resolver Works
+    project(projectId: ID!): Project
+    projects(email: String!): [Project]
+    vehicle(projectId: ID!): Vehicle
+    # transactions: [Transaction]
+    # notes: [Note]
+    # todos: [Todo]
   }
 
   type Mutation {
