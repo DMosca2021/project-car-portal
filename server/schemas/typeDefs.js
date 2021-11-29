@@ -6,6 +6,7 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     email: String!
+    password: String! # Need to add this to the User model!!!!!
     projects: [Project]
   }
 

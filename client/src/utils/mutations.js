@@ -11,7 +11,8 @@ export const LOGIN = gql`
   }
 `;
 
-export const ADD_ORDER = gql`
+// Need to change this to ADD_PROJECT 
+/* export const ADD_ORDER = gql`
   mutation addOrder($products: [ID]!) {
     addOrder(products: $products) {
       purchaseDate
@@ -27,7 +28,7 @@ export const ADD_ORDER = gql`
       }
     }
   }
-`;
+`; */
 
 export const ADD_USER = gql`
   mutation addUser(
