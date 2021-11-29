@@ -1,49 +1,42 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-export const QUERY_PRODUCTS = gql`
-  query getProducts($category: ID) {
-    products(category: $category) {
+export const QUERY_PROJECTS = gql`
+  query getProjects {
+    getProjects {
       _id
+      projectDate
       name
       description
-      price
-      quantity
       image
-      category {
+      budget
+      timeSpent
+      vehicle {
         _id
+        type
+        year
+        make
+        model
+        trimLvl
+        engineDisp
       }
-    }
-  }
-`;
-
-export const QUERY_CHECKOUT = gql`
-  query getCheckout($products: [ID]!) {
-    checkout(products: $products) {
-      session
-    }
-  }
-`;
-
-export const QUERY_ALL_PRODUCTS = gql`
-  {
-    products {
-      _id
-      name
-      description
-      price
-      quantity
-      category {
+      transactions {
+        _id
         name
+        value
+        date
       }
-    }
-  }
-`;
-
-export const QUERY_CATEGORIES = gql`
-  {
-    categories {
-      _id
-      name
+      todos {
+        _id
+        content
+        createdOn
+        isComplete
+      }
+      notes {
+        _id
+        title
+        content
+        createdOn
+      }
     }
   }
 `;
@@ -53,16 +46,41 @@ export const QUERY_USER = gql`
     user {
       firstName
       lastName
-      orders {
+      email
+      projects {
         _id
-        purchaseDate
-        products {
+        projectDate
+        name
+        description
+        image
+        budget
+        timeSpent
+        vehicle {
+          _id
+          type
+          year
+          make
+          model
+          trimLvl
+          engineDisp
+        }
+        transactions {
           _id
           name
-          description
-          price
-          quantity
-          image
+          value
+          date
+        }
+        todos {
+          _id
+          content
+          createdOn
+          isComplete
+        }
+        notes {
+          _id
+          title
+          content
+          createdOn
         }
       }
     }
