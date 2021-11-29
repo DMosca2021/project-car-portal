@@ -61,12 +61,12 @@ const typeDefs = gql`
   }
 
   type Query {
-    user(email: String!): User
+    user(email: String!): User # Need to figure out how to query with Auth
     users: [User] # This query works -- Resolver Works
     getProjects: [Project] # This query works -- Resolver Works
-    project(projectId: ID!): Project
+    project(_id: ID!): Project # This query works -- Resolver works
     projects(email: String!): [Project]
-    vehicle(projectId: ID!): Vehicle
+    vehicle(id: ID!): Vehicle
     # transactions: [Transaction]
     # notes: [Note]
     # todos: [Todo]
@@ -74,12 +74,12 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addProject(projectDate: String!, name: String!, description: String, image: String, budget: Int, timeSpent: Float): Project
-    addVehicle(type: String!, year: Int!, make: String!, model: String!, trimLvl: String, engineDisp: Int): Vehicle
+    # addProject(projectDate: String!, name: String!, description: String, image: String, budget: Int, timeSpent: Float): Project
+    # addVehicle(type: String!, year: Int!, make: String!, model: String!, trimLvl: String, engineDisp: Int): Vehicle
     # addTransaction(products: [ID]!): Transaction
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateProject(_id: ID!, name: String, description: String, image: String, budget: Int, timeSpent: Float): Project
-    updateVehicle(type: String, year: Int, make: String, model: String, trimLvl: String, engineDisp: Int): Vehicle 
+    # updateUser(firstName: String, lastName: String, email: String, password: String): User
+    # updateProject(_id: ID!, name: String, description: String, image: String, budget: Int, timeSpent: Float): Project
+    # updateVehicle(type: String, year: Int, make: String, model: String, trimLvl: String, engineDisp: Int): Vehicle 
     login(email: String!, password: String!): Auth
   }
 `;
