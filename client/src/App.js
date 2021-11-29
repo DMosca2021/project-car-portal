@@ -4,13 +4,12 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@a
 import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
-import Detail from './pages/Detail';
+
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
-import Success from './pages/Success';
 import CurrentProjects from './pages/CurrentProjects';
 
 const httpLink = createHttpLink({
@@ -43,9 +42,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
-              <Route exact path="/success" component={Success} /> {/* Do not need this*/}
               <Route exact path="/currentProjects" component={CurrentProjects} /> {/* This will become list of current projects after user logs in. */}
-              <Route exact path="/products/:id" component={Detail} /> {/* This will be the individual project */}
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
