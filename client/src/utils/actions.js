@@ -9,3 +9,18 @@ export const TOGGLE_CART = "TOGGLE_CART";
 
 export const UPDATE_CATEGORIES = "UPDATE_CATEGORIES";
 export const UPDATE_CURRENT_CATEGORY = "UPDATE_CURRENT_CATEGORY";
+
+// Add project
+// Add vehicle
+// add transaction
+// add todo
+// add note
+// update project
+// update vehicle
+// update transaction
+// update todo
+// update note
+// remove project
+// remove transaction
+// remove todo
+// remove note
