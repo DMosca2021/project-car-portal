@@ -33,6 +33,10 @@ const vehicleSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Transaction",
   },
+  userID: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  }
 });
 
 const Vehicle = mongoose.model("Vehicle", vehicleSchema);
