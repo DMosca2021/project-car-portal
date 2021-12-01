@@ -22,6 +22,7 @@ const typeDefs = gql`
     transactions: [Transaction]
     todos: [Todo]
     notes: [Note]
+    # Do i Need a user id to make the project tied to a particular project?
   }
 
   type Vehicle {
@@ -32,7 +33,7 @@ const typeDefs = gql`
     model: String!
     trimLvl: String
     engineDisp: Int
-    
+    # Do i Need a project id to make the vehicle tied to a particular project?
   }
 
   type Transaction {
@@ -40,6 +41,7 @@ const typeDefs = gql`
     name: String!
     value: Int!
     date: String!
+    
   }
 
   type Note{
@@ -64,9 +66,8 @@ const typeDefs = gql`
   type Query {
     user(email: String!): User # Need to figure out how to query with Auth
     users: [User] # This query works -- Resolver Works
-    getProjects: [Project] # This query works -- Resolver Works
     project(_id: ID!): Project # This query works -- Resolver works
-    projects(email: String!): [Project]
+    getProjects: [Project] # This query works -- Resolver Works
     vehicle(id: ID!): Vehicle
     # transactions: [Transaction]
     # notes: [Note]
