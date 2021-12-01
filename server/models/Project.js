@@ -20,7 +20,6 @@ const projectSchema = new Schema({
     },
     budget: {
       type: Number,
-      required: true
     },
     timeSpent: {
       type: Number,
@@ -30,7 +29,6 @@ const projectSchema = new Schema({
     vehicle: {
       type: Schema.Types.ObjectId,
       ref: 'Vehicle',
-      required: true
     }, 
     note: {
       type: Schema.Types.ObjectId,
