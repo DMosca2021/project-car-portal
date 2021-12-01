@@ -11,9 +11,6 @@ const { signToken } = require("../utils/auth");
 
 const resolvers = {
   Query: {
-    getAllUsers: async () => {
-      return User.find().populate("project");
-    },
     getUser: async (parent, args, context) => {
       if (context.user) {
         const user = await User.findById(context.user._id);
@@ -23,12 +20,23 @@ const resolvers = {
 
       throw new AuthenticationError("Not logged in");
     },
-    getAllProjects: async () => {
-      return await Project.find().populate("vehicle");
+
+    getAllUsers: async () => {
+      return User.find().populate("project");
     },
+
     getProject: async (parent, { _id }) => {
       return await Project.findById(_id).populate("vehicle");
     },
+
+    getAllProjects: async () => {
+      return await Project.find().populate("vehicle");
+    },
+
+    getAllVehicles: async () => {
+      return Vehicle.find()
+    } 
+
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -39,10 +47,15 @@ const resolvers = {
     },
 
     addProject: async (parent, args, context) => {
-      const {  name, description } = args.project;
-      const project = new Project({ name, description });
+      const project = new Project(args.project);
       await project.save();
       return project;
+    },
+
+    addVehicle: async (parent, args, context) => {
+      const vehicle = new Vehicle(args.vehicle)
+      await vehicle.save();
+      return vehicle;
     },
 
     updateUser: async (parent, args, context) => {
