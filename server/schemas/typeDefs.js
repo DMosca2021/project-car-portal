@@ -6,7 +6,7 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     email: String!
-    password: String! # Need to add this to the User model!!!!!
+    password: String! 
     projects: [Project]
   }
 
@@ -22,7 +22,7 @@ const typeDefs = gql`
     transactions: [Transaction]
     todos: [Todo]
     notes: [Note]
-    # Do i Need a user id to make the project tied to a particular project?
+    userID: Int
   }
 
   type Vehicle {
@@ -33,7 +33,7 @@ const typeDefs = gql`
     model: String
     trimLvl: String
     engineDisp: Float
-    # Do i Need a project id to make the vehicle tied to a particular project?
+    projectID: Int
   }
 
   type Transaction {
@@ -41,7 +41,7 @@ const typeDefs = gql`
     name: String!
     value: Int!
     date: String!
-    
+    projectID: Int
   }
 
   type Note{
@@ -49,6 +49,7 @@ const typeDefs = gql`
     title: String!
     content: String!
     createdOn: String!
+    projectID: Int
   }
 
   type Todo{
@@ -56,6 +57,7 @@ const typeDefs = gql`
     content: String!
     createdOn: String!
     isComplete: Boolean!
+    projectID: Int
   }
 
   type Auth {
