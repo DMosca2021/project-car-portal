@@ -33,7 +33,7 @@ function ProjectList() {
 
   return (
     <div className="my-2">
-      <h2>Our projects:</h2>
+      <h2>Your projects:</h2>
       {state.projects.length ? (
         <div className="flex-row">
           {filterprojects().map((project) => (
@@ -55,4 +55,4 @@ function ProjectList() {
   );
 }
 
-export default projectList;
+export default ProjectList;
