@@ -5,6 +5,14 @@ import { UPDATE_PROJECTS, ADD_PROJECT } from './actions';
 export const reducer = (state, action) => {
   switch (action.type) {
     // Returns a copy of state with an update products array. We use the action.products property and spread it's contents into the new array.
+    // case ADD_PROJECT:
+    //   const newProject = { ...action.payload }
+
+    //   return {
+    //     ...state,
+        
+    //   }
+
     case UPDATE_PROJECTS:
       return {
         ...state,
