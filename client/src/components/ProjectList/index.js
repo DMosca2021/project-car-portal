@@ -43,7 +43,8 @@ function ProjectList() {
               image={project.image}
               name={project.name}
               price={project.price}
-              quantity={project.quantity}
+              budget={project.budget}
+              timeSpent={project.timeSpent}
             />
           ))}
         </div>
