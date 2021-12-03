@@ -1,14 +1,14 @@
 import { useReducer } from 'react';
-import { UPDATE_PRODUCTS } from './actions';
+import { UPDATE_PROJECTS, ADD_PROJECT } from './actions';
 
 // The reducer is a function that accepts the current state and an action. It returns a new state based on that action.
 export const reducer = (state, action) => {
   switch (action.type) {
     // Returns a copy of state with an update products array. We use the action.products property and spread it's contents into the new array.
-    case UPDATE_PRODUCTS:
+    case UPDATE_PROJECTS:
       return {
         ...state,
-        products: [...action.products],
+        projects: [...action.projects],
       };
 
 

@@ -1,5 +1,7 @@
 export const UPDATE_PRODUCTS = "UPDATE_PRODUCTS";
-
+export const ADD_PROJECT = "ADD_PROJECT";
+export const ADD_VEHICLE = "ADD_VEHICLE";
+export const ADD_TRANSACTION = "ADD_TRANSACTION"; 
 
 // Add project
 // Add vehicle
