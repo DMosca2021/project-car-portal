@@ -28,19 +28,19 @@ export default function ProjectForm() {
           <input
               defaultValue={newCarMake}
               onChange={(event) => setNewProjectName(event.target.value)}
-              placeholder="New car make..."
+              placeholder="Project Name"
               type="text"
             />
         </div>
       </div>
 
       <div className="field">
-        <label className="label">Name</label>
+        <label className="label">Description</label>
         <div className="control">
           <input
               defaultValue={newCarMake}
               onChange={(event) => setNewProjectDesc(event.target.value)}
-              placeholder="New car make..."
+              placeholder="Project Description"
               type="text"
             />
         </div>
@@ -65,7 +65,7 @@ export default function ProjectForm() {
           <input
               defaultValue={newCarMake}
               onChange={(event) => setNewProjectBudg(event.target.value)}
-              placeholder="New car make..."
+              placeholder="What's your budget..."
               type="text"
             />
         </div>
@@ -77,7 +77,7 @@ export default function ProjectForm() {
           <input
               defaultValue={newCarMake}
               onChange={(event) => setNewProjectTime(event.target.value)}
-              placeholder="New car make..."
+              placeholder="How many hours have you put in..."
               type="text"
             />
         </div>
