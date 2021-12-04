@@ -4,7 +4,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@a
 import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
-
+import ProjectForm from './pages/ProjectForm'
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
@@ -42,6 +42,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
+              <Route exact path="/ProjectForm" component={ProjectForm} />
               <Route exact path="/currentProjects" component={CurrentProjects} /> {/* This will become list of current projects after user logs in. */}
               <Route component={NoMatch} />
             </Switch>

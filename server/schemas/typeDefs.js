@@ -96,7 +96,7 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth # This mutation and resolver works
-    addProject(project: ProjectInput): Project # This mutation and resolver works, need to add all fields to project still.
+    addProject(name: String!, description: String!, budget: Int!, timeSpent: Int!): Project # This mutation and resolver works, need to add all fields to project still.
     addVehicle(vehicle: VehicleInput): Vehicle
     # addTransaction(products: [ID]!): Transaction
     updateUser(firstName: String, lastName: String, email: String, password: String): User

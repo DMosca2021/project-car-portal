@@ -11,24 +11,21 @@ export const LOGIN = gql`
   }
 `;
 
-// Need to change this to ADD_PROJECT 
-/* export const ADD_ORDER = gql`
-  mutation addOrder($products: [ID]!) {
-    addOrder(products: $products) {
-      purchaseDate
-      products {
-        _id
-        name
-        description
-        price
-        quantity
-        category {
-          name
-        }
-      }
-    }
-  }
-`; */
+export const ADD_PROJECT = gql`
+mutation addProject(
+  $name: String!
+  $description: String!
+  $budget: Int!
+  $timeSpent: Int!
+) {
+  addProject(
+    name: $name
+    description: $description
+    budget: $budget
+    timeSpent: $timeSpent
+  )
+}
+`;
 
 export const ADD_USER = gql`
   mutation addUser(
