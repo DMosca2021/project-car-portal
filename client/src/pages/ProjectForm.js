@@ -71,8 +71,8 @@ function AddProject(props) {
           </div>
         </div>
 
-        {/* <div id="file-js-example" class="file has-name">
-        <label class="file-label">
+        <div id="file-js-example" class="file has-name">
+        <label class="file-label"> Project Pictures
           <input class="file-input" type="file" name="resume" />
           <span class="file-cta">
             <span class="file-icon">
@@ -82,7 +82,7 @@ function AddProject(props) {
           </span>
           <span class="file-name">No file uploaded</span>
         </label>
-      </div> */}
+      </div>
 
         <div className="field">
           <label className="label" htmlFor="budget">Budget</label>

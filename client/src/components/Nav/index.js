@@ -10,6 +10,9 @@ function Nav() {
           <li className="mx-1">
             <Link to="/currentProjects">Current Projects</Link>
           </li>
+          <li className="mx-1">
+            <Link to="/projectForm">Create a New Project</Link>
+          </li>
           <li>
             <Link to="/">← Back to Home</Link>
           </li>

@@ -42,7 +42,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/signup" component={Signup} />
-              <Route exact path="/ProjectForm" component={ProjectForm} />
+              <Route exact path="/projectForm" component={ProjectForm} />
               <Route exact path="/currentProjects" component={CurrentProjects} /> {/* This will become list of current projects after user logs in. */}
               <Route component={NoMatch} />
             </Switch>
