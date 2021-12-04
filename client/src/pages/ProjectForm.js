@@ -4,7 +4,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_PROJECT, ADD_VEHICLE } from "../utils/mutations";
 
 function AddProject(props) {
-  const [formState, setFormState] = useState({
+  const [formState, setFormState] = useState({ //props?
     name: "",
     description: "",
     budget: "",
@@ -76,6 +76,7 @@ function AddProject(props) {
           </div>
         </div>
 
+        {/* div for image upload section of project form. */}
         {/* <div id="file-js-example" className="file has-name">
         <label className="file-label"> Project Pictures
           <input className="file-input" type="file" name="resume" />
