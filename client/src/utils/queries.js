@@ -41,6 +41,42 @@ export const QUERY_PROJECTS = gql`
   }
 `;
 
+export const QUERY_PROJECT_BY_ID = gql`
+query projectByID($id: ID!) {
+  getProject(_id: $id) {
+    projectDate
+    name
+    description
+    image
+    budget
+    timeSpent
+    vehicle {
+      type
+      year
+      make
+      model
+      trimLvl
+      engineDisp
+    }
+    transactions {
+      name
+      value
+      date
+    }
+    todos {
+      content
+      createdOn
+      isComplete
+    }
+    notes {
+      title
+      content
+      createdOn
+    }
+  }
+}
+`;
+
 export const QUERY_USER = gql`
   {
     user {

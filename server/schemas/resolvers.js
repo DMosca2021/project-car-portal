@@ -1,12 +1,5 @@
 const { AuthenticationError } = require("apollo-server-express");
-const {
-  User,
-  Project,
-  Vehicle,
-  Transaction,
-  Note,
-  Todo,
-} = require("../models");
+const { User, Project, Vehicle } = require("../models");
 const { signToken } = require("../utils/auth");
 
 const resolvers = {
@@ -47,13 +40,14 @@ const resolvers = {
     },
 
     addProject: async (parent, args, context) => {
-      const project = new Project(args.project);
+      console.log(args);
+      let project = new Project(args.input);
       await project.save();
       return project;
     },
 
     addVehicle: async (parent, args, context) => {
-      const vehicle = new Vehicle(args.vehicle)
+      let vehicle = new Vehicle(args.vehicle)
       await vehicle.save();
       return vehicle;
     },

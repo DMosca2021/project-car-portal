@@ -12,18 +12,14 @@ export const LOGIN = gql`
 `;
 
 export const ADD_PROJECT = gql`
-mutation addProject(
-  $name: String!
-  $description: String!
-  $budget: Int!
-  $timeSpent: Int!
-) {
-  addProject(
-    name: $name
-    description: $description
-    budget: $budget
-    timeSpent: $timeSpent
-  )
+mutation ($input: ProjectInput!){
+  addProject (input: $input) {
+    name
+    description
+    image
+    budget
+    timeSpent
+  }
 }
 `;
 
