@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Auth from "../utils/auth";
-import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_PROJECT, ADD_VEHICLE } from "../utils/mutations";
 
@@ -23,8 +22,8 @@ function AddProject(props) {
         timeSpent: formState.timeSpent,
       },
     });
-    // const token = mutationResponse.data.addUser.token;
-    // Auth.login(token);
+    const token = mutationResponse.data.addUser.token;
+    Auth.login(token);
   };
 
   const handleChange = (event) => {
@@ -34,40 +33,46 @@ function AddProject(props) {
       [name]: value,
     });
   };
-  // const fileInput = document.querySelector("#file-js-example input[type=file]");
-  // fileInput.onchange = () => {
-  //   if (fileInput.files.length > 0) {
-  //     const fileName = document.querySelector("#file-js-example .file-name");
-  //     fileName.textContent = fileInput.files[0].name;
-  //   }
-  // };
+
+  //  Function from bulma docs for selecting a local file, for image upload.
+  /* const fileInput = document.querySelector("#file-js-example input[type=file]");
+      fileInput.onchange = () => {
+      if (fileInput.files.length > 0) {
+      const fileName = document.querySelector("#file-js-example .file-name");
+      fileName.textContent = fileInput.files[0].name;
+    }
+  }; */
 
   return (
     <>
       <form onSubmit={handleFormSubmit}>
         <div className="field">
-          <label className="label" htmlFor="name">Name</label>
+          <label className="label" htmlFor="name">
+            Name
+          </label>
           <div className="control">
-          <input
-            placeholder="Project Name"
-            name="name"
-            type="name"
-            id="projectName"
-            onChange={handleChange}
-          />
+            <input
+              placeholder="Project Name"
+              name="name"
+              type="name"
+              id="projectName"
+              onChange={handleChange}
+            />
           </div>
         </div>
 
         <div className="field">
-          <label className="label" htmlFor="description">Description</label>
+          <label className="label" htmlFor="description">
+            Description
+          </label>
           <div className="control">
-          <input
-            placeholder="Project Description"
-            name="description"
-            type="description"
-            id="description"
-            onChange={handleChange}
-          />
+            <input
+              placeholder="Project Description"
+              name="description"
+              type="description"
+              id="description"
+              onChange={handleChange}
+            />
           </div>
         </div>
 
@@ -85,28 +90,32 @@ function AddProject(props) {
       </div> */}
 
         <div className="field">
-          <label className="label" htmlFor="budget">Budget</label>
+          <label className="label" htmlFor="budget">
+            Budget
+          </label>
           <div className="control">
-          <input
-            placeholder="What's your budget?"
-            name="budget"
-            type="budget"
-            id="budget"
-            onChange={handleChange}
-          />
+            <input
+              placeholder="What's your budget?"
+              name="budget"
+              type="budget"
+              id="budget"
+              onChange={handleChange}
+            />
           </div>
         </div>
 
         <div className="field">
-          <label className="label" htmlFor="timeSpent">Time Spent on Project</label>
+          <label className="label" htmlFor="timeSpent">
+            Time Spent on Project
+          </label>
           <div className="control">
-          <input
-            placeholder="How many hours have you spent working?"
-            name="timeSpent"
-            type="timeSpent"
-            id="time"
-            onChange={handleChange}
-          />
+            <input
+              placeholder="How many hours have you spent working?"
+              name="timeSpent"
+              type="timeSpent"
+              id="time"
+              onChange={handleChange}
+            />
           </div>
         </div>
 
