@@ -38,13 +38,16 @@ function Nav() {
   }
 
   return (
-    <header className="flex-row px-1">
+    <div>
+      <header className="flex-row px-1">
       <h1>
         <Link to="/">Project Car Portal</Link>
       </h1>
 
       <nav>{showNavigation()}</nav>
     </header>
+    
+    </div>
   );
 }
 
