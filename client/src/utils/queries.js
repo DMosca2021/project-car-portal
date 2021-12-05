@@ -122,3 +122,18 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const QUERY_VEHICLES = gql`
+query getVehicles {
+  getAllVehicles {
+    _id
+    type
+    year
+    make
+    model
+    trimLvl
+    engineDisp
+    projectID
+  }
+}
+`
