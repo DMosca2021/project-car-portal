@@ -97,7 +97,7 @@ const typeDefs = gql`
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth # This mutation and resolver works
     addProject(input: ProjectInput!): Project
-    addVehicle(input: VehicleInput): Vehicle
+    addVehicle(input: VehicleInput!): Vehicle
     # addTransaction(products: [ID]!): Transaction
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     # updateProject(_id: ID!, name: String, description: String, image: String, budget: Int, timeSpent: Float): Project
@@ -107,6 +107,3 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
-
-
-// (name: String!, description: String!, budget: Int!, timeSpent: Int!)
