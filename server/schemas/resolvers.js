@@ -47,7 +47,7 @@ const resolvers = {
     },
 
     addVehicle: async (parent, args, context) => {
-      let vehicle = new Vehicle(args.vehicle)
+      let vehicle = new Vehicle(args.input)
       await vehicle.save();
       return vehicle;
     },
