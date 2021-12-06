@@ -1,4 +1,4 @@
-/* :root {
+ /* :root {
   --primary: #232F3E;
   --secondary: #F3A847;
   --tertiary: #B12704;
@@ -7,18 +7,18 @@
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
-}
+} */
 
 * {
   box-sizing: border-box;
 }
 
-html,
+/* html,
 body {
   min-height: 100%;
-}
+} */
 
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: 'Karla', sans-serif;
@@ -26,8 +26,9 @@ body {
   line-height: 1.5;
   font-size: 16px;
   color: var(--dark);
-}
+} */
 
+/*
 h1,
 h2,
 h3,
@@ -220,7 +221,7 @@ input:focus {
 #background {
   /* padding: 100px;
   margin: 50px; */
-  height: fit-content;
+  height: 50%;
   width: 100%;
   background-color: brown;
   background-image: url("https://media.istockphoto.com/photos/an-empty-cork-board-or-message-board-for-notes-picture-id171145099?k=20&m=171145099&s=170667a&w=0&h=wtlli4QNf57OIyzvCVtF6KqgSlc4a1rk9dB-Wh3CTdI=");
@@ -236,4 +237,8 @@ input:focus {
   align-items: center;
   background-attachment: fixed;
   background-position: center;
+}
+
+#nav-bar {
+  color: white;
 }
