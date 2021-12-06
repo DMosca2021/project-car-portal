@@ -202,26 +202,38 @@ input:focus {
 .error-text {
   color: var(--error);
 }
-
+ */
+ 
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
   }
-} */
+}
 
 .main-contain {
   background-color: blue;
   background-image: url("https://m.media-amazon.com/images/I/81PrPab6QaL._AC_SX466_.jpg");
+  background-attachment: fixed;
+  background-position: center; 
 }
 
 #background {
-  padding: 100px;
-  margin: 50px;
-  background-color: yellow;
+  /* padding: 100px;
+  margin: 50px; */
+  height: fit-content;
+  width: 100%;
+  background-color: brown;
+  background-image: url("https://media.istockphoto.com/photos/an-empty-cork-board-or-message-board-for-notes-picture-id171145099?k=20&m=171145099&s=170667a&w=0&h=wtlli4QNf57OIyzvCVtF6KqgSlc4a1rk9dB-Wh3CTdI=");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 #form-card {
-  padding: 50px;
+  width: 50%;
+  height: 50%;
   justify-content: center;
-  text-align: center;
+  align-items: center;
+  background-attachment: fixed;
+  background-position: center;
 }

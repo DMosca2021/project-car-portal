@@ -40,22 +40,13 @@ function AddProject(props) {
     });
   };
 
-  //  Function from bulma docs for selecting a local file, for image upload.
-  /* const fileInput = document.querySelector("#file-js-example input[type=file]");
-      fileInput.onchange = () => {
-      if (fileInput.files.length > 0) {
-      const fileName = document.querySelector("#file-js-example .file-name");
-      fileName.textContent = fileInput.files[0].name;
-    }
-  }; */
-
   return (
     <>
       <div className="ui raised segment" id="background">
 
 
         <div className="ui center aligned piled grey very padded segment" id="form-card">
-          <form className="ui form">
+          <form className="ui form" id="form">
             <h4 className="ui dividing header">Project Information</h4>
 
             <div className="six wide field">
