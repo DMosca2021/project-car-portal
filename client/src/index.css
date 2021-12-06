@@ -240,10 +240,6 @@ input:focus {
   background-position: center;
 }
 
-#option-test {
-  display: inline;
-}
-
 #form-container {
   font-family: 'Permanent Marker', cursive;
   color: red;
@@ -262,11 +258,11 @@ input:focus {
 
 #home-container {
   font-family: 'Permanent Marker', cursive;
-  font-size: 45px;
+  font-size: 40px;
   color: red;
   margin-top: 50px;
-  margin-left: 25px;
-  margin-right: 25px;
+  margin-left: 50px;
+  margin-right: 50px;
   background-position: center;
   background-color: white;
   justify-content: center;
@@ -275,4 +271,27 @@ input:focus {
   border: 5px groove rgba(85, 85, 85, 0.616);
   border-radius: 2px;
   box-shadow: 0px 12px 2px 1px rgba(0, 0, 255, .45);
+}
+
+#navbarBasicExample {
+  background-color: rgb(131, 131, 131);
+  background-image: url(https://textures.world/wp-content/uploads/2018/10/Aluminum-Brushed-Metal-Seamless-Background-Textures-2-copy.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.navbar-item {
+  color: white;
+}
+
+.navbar-brand {
+  background-color: rgb(131, 131, 131);
+  background-image: url(https://textures.world/wp-content/uploads/2018/10/Aluminum-Brushed-Metal-Seamless-Background-Textures-2-copy.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#signup-btn {
+  margin-right: 3px;
 }
