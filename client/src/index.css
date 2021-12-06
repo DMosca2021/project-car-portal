@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --primary: #232F3E;
   --secondary: #F3A847;
   --tertiary: #B12704;
@@ -207,4 +207,21 @@ input:focus {
   .card {
     width: 100%;
   }
+} */
+
+.main-contain {
+  background-color: blue;
+  background-image: url("https://m.media-amazon.com/images/I/81PrPab6QaL._AC_SX466_.jpg");
+}
+
+#background {
+  padding: 100px;
+  margin: 50px;
+  background-color: yellow;
+}
+
+#form-card {
+  padding: 50px;
+  justify-content: center;
+  text-align: center;
 }

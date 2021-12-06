@@ -35,7 +35,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <div className="main-contain">
           <StoreProvider> {/* Change this name to the "ProjectProvider" to make more sense with theme of project */}
             <Nav /> {/* If we want to add a drop down menu or change to side bar menu must do inside Nav component This shows on all pages, add footer in opposite location for same effect */}
             <Switch>
