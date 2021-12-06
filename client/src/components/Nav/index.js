@@ -111,7 +111,7 @@ function Nav() {
           <div className="navbar-end">
             <div className="navbar-item">
               <div className="buttons">
-                <a><Link className="button is-link is-inverted is-outlined" to="/signup" id="signup-btn"><FontAwesomeIcon icon={faClipboardList} />Sign up </Link></a>
+                <a><Link className="button is-link is-outlined" to="/signup" id="signup-btn"><FontAwesomeIcon icon={faClipboardList} />Sign up </Link></a>
                 <hr></hr>
                 <a><Link className="button is-light" to="/login"><FontAwesomeIcon icon={faClipboardCheck} />Log in</Link></a>
               </div>
