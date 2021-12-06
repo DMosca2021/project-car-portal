@@ -40,6 +40,7 @@ function Signup(props) {
         <div className="field">
           <label htmlFor="firstName">First Name:</label>
           <input
+          className="input is-small"
             placeholder="First"
             name="firstName"
             type="firstName"
@@ -50,6 +51,7 @@ function Signup(props) {
         <div className="field">
           <label htmlFor="lastName">Last Name:</label>
           <input
+          className="input is-small"
             placeholder="Last"
             name="lastName"
             type="lastName"
@@ -60,6 +62,7 @@ function Signup(props) {
         <div className="field">
           <label htmlFor="email">Email:</label>
           <input
+          className="input is-small"
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -70,6 +73,7 @@ function Signup(props) {
         <div className="field">
           <label htmlFor="pwd">Password:</label>
           <input
+          className="input is-small"
             placeholder="******"
             name="password"
             type="password"

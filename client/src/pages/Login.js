@@ -3,6 +3,9 @@ import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
+
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -36,7 +39,7 @@ function Login(props) {
         <div className="field">
           <label htmlFor="email">Email address: </label>
           <input
-            className="input is-medium"
+            className="input is-small"
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -47,7 +50,7 @@ function Login(props) {
         <div className="field">
           <label htmlFor="pwd">Password: </label>
           <input
-            className="input is-medium"
+            className="input is-small"
             placeholder="******"
             name="password"
             type="password"
@@ -64,7 +67,7 @@ function Login(props) {
           <button type="submit">Submit</button>
         </div>
         <div className="button">
-          <Link to="/signup">← Go to Signup</Link>
+          <Link to="/signup"><FontAwesomeIcon icon={faClipboardList} /> Go to Signup</Link>
         </div>
       </form>
     </div>
