@@ -42,7 +42,7 @@ function AddProject(props) {
 
   return (
     <>
-      <div className="ui raised segment" id="background">
+      <div className="hero is-halfheight" id="form-container">
 
 
         <div className="ui center aligned piled grey very padded segment" id="form-card">

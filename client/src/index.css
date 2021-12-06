@@ -216,11 +216,12 @@ input:focus {
   background-image: url("https://m.media-amazon.com/images/I/81PrPab6QaL._AC_SX466_.jpg");
   background-attachment: fixed;
   background-position: center; 
+  height: 100vh;
 }
 
-#background {
-  /* padding: 100px;
-  margin: 50px; */
+/* #background {
+  padding: 100px;
+  margin: 50px;
   height: 50%;
   width: 100%;
   background-color: brown;
@@ -228,7 +229,7 @@ input:focus {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
+} */
 
 #form-card {
   width: 50%;
@@ -239,6 +240,19 @@ input:focus {
   background-position: center;
 }
 
-#nav-bar {
-  color: white;
+#option-test {
+  display: inline;
+}
+
+#form-container {
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-position: center;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  border: 5px groove rgba(85, 85, 85, 0.616);
+  border-radius: 2px;
+  box-shadow: 0px 12px 2px 1px rgba(0, 0, 255, .45);
 }
