@@ -115,15 +115,6 @@ function Nav() {
           </div>
         </nav>
       </div>
-      {/* <div className="column is-full">
-      <header className="navbar" id="nav-bar">
-      <h1>
-        <Link to="/">Project Car Portal</Link>
-      </h1>
-
-      <nav className="column is-half">{showNavigation()}</nav>
-    </header>
-    </div> */}
     </div>
   );
 }
