@@ -53,7 +53,7 @@ function Nav() {
       <div className="column is-full">
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
-            <a className="navbar-item" href="https://bulma.io">
+            <a className="navbar-item" href="https://project-car-portal.herokuapp.com/">
               <img src="https://cdn.w600.comps.canstockphoto.com/auto-mechanic-icon-outline-style-vector-clipart_csp86172306.jpg"></img>
             </a>
 
