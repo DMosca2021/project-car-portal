@@ -1,9 +1,13 @@
 import { idbPromise } from "../../utils/helpers";
+import Auth from "../../utils/auth";
+
 
 const ProjectList = ({ projects }) => {
   console.log(projects);
   if (!projects.length) {
     return <h3>No Projects Yet</h3>;
+  } else if (!Auth.loggedIn()) {
+    return <h3>Please Log In</h3>
   }
 
   return (
