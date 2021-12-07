@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Auth from "../utils/auth";
+import { Link } from "react-router-dom"
 import { useMutation } from "@apollo/client";
 import { ADD_PROJECT, ADD_VEHICLE } from "../utils/mutations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -71,7 +72,7 @@ function AddProject(props) {
                       type="text"
                       placeholder="Project Date"
                     ></input>
-                    <span class="icon is-small is-left">
+                    <span className="icon is-small is-left">
                       <FontAwesomeIcon icon={faCalendarAlt} />
                     </span>
                   </p>
@@ -95,11 +96,11 @@ function AddProject(props) {
                 <div className="field">
                   <p className="control has-icons-left">
                     <input
-                      class="input is-normal"
+                      className="input is-normal"
                       type="text"
                       placeholder="Name"
                     ></input>
-                    <span class="icon is-small is-left">
+                    <span className="icon is-small is-left">
                       <FontAwesomeIcon icon={faCar} />
                     </span>
                   </p>
@@ -139,26 +140,26 @@ function AddProject(props) {
                 </div>
               </div>
               <div className="column is-5">
-                <div class="field">
-                  <p class="control has-icons-left">
+                <div className="field">
+                  <p className="control has-icons-left">
                     <input
-                      class="input"
+                      className="input"
                       type="number"
                       placeholder="Time spent in hours"
                     ></input>
-                    <span class="icon is-small is-left">
+                    <span className="icon is-small is-left">
                       <FontAwesomeIcon icon={faStopwatch} />
                     </span>
                   </p>
                 </div>
               </div>
               <div className="column">
-                <div class="field is-grouped is-grouped-centered">
-                  <div class="control">
-                    <button class="button is-link">Submit</button>
+                <div className="field is-grouped is-grouped-centered">
+                  <div className="control">
+                    <button className="button is-link" type="submit">Submit</button>
                   </div>
-                  <div class="control">
-                    <button class="button is-link is-light">Cancel</button>
+                  <div className="control">
+                    <button className="button is-link is-light">Cancel</button>
                   </div>
                 </div>
               </div>
