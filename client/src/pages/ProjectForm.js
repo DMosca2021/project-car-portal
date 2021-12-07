@@ -60,9 +60,11 @@ function AddProject(props) {
 
   return (
     <>
+      
       <div className="columns is-mobile">
         <div className="column is-10 is-offset-1">
           <div className="hero is-halfheight" id="form-container">
+          <h1>Add a project here</h1>
             <div className="columns is-multiline is-mobile">
               <div className="column is-5 is-offset-1">
                 <div className="field">
@@ -153,7 +155,7 @@ function AddProject(props) {
                   </p>
                 </div>
               </div>
-              <div className="column">
+              <div className="column" id="submit-btn">
                 <div className="field is-grouped is-grouped-centered">
                   <div className="control">
                     <button className="button is-link" type="submit">Submit</button>
