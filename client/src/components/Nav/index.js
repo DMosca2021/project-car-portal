@@ -53,10 +53,12 @@ function Nav() {
       <div className="column is-full">
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
-            <a className="navbar-item" href="https://project-car-portal.herokuapp.com/">
+            <a
+              className="navbar-item"
+              href="https://project-car-portal.herokuapp.com/"
+            >
               <img src="https://cdn.w600.comps.canstockphoto.com/auto-mechanic-icon-outline-style-vector-clipart_csp86172306.jpg"></img>
             </a>
-
             <a
               role="button"
               className="navbar-burger"
@@ -69,18 +71,13 @@ function Nav() {
               <span aria-hidden="true"></span>
             </a>
           </div>
-
           <div id="navbarBasicExample" className="navbar-menu">
             <div className="navbar-start">
               <Link className="navbar-item" to="/">
                 Home
               </Link>
-
-              <a className="navbar-item">Documentation</a>
-
               <div className="navbar-item has-dropdown is-hoverable">
                 <a className="navbar-link">More</a>
-
                 <div className="navbar-dropdown">
                   <Link className="navbar-item" to="/projectForm">
                     {" "}
@@ -89,14 +86,12 @@ function Nav() {
                   <Link className="navbar-item" to="/currentProjects">
                     Current Projects
                   </Link>
-
                   <a className="navbar-item">Contact</a>
                   <hr className="navbar-divider"></hr>
                   <a className="navbar-item">Report an issue</a>
                 </div>
               </div>
             </div>
-
             <div className="navbar-end">
               <div className="navbar-item">
                 <div className="buttons">
