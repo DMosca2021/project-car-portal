@@ -21,7 +21,7 @@ function CurrentProjects() {
                   <div id="project-text">Loading...</div>
                 ) : (
                   <div className="columns is-mobile">
-                    <div className="column is-8">
+                    <div className="column is-12">
                       <ProjectList projects={projects} />
                     </div>
                   </div>

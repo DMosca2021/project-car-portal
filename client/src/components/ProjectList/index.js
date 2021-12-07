@@ -10,9 +10,14 @@ const ProjectList = ({ projects }) => {
     <div>
       {projects &&
         projects.map((project) => (
-          <div className="card" key={project._id}>
+          <section className="section" key={project._id} id="project-card">
             <h3>Lets See if this works?!?</h3>
-            <div className="card-image">
+            <ul>
+              <li>{project.name}</li>
+              <li>{project.description}</li>
+            </ul>
+
+            {/* <div className="card-image">
               <figure className="image is-4by3">
                 <img src={project.image} alt="Car-pic"></img>
               </figure>
@@ -30,8 +35,8 @@ const ProjectList = ({ projects }) => {
               <li>{project.budget}</li>
               <li>{project.timeSpent}</li>
             </ul>
-            <time datetime="2016-1-1">{project.projectDate}</time>
-          </div>
+            <time datetime="2016-1-1">{project.projectDate}</time> */}
+          </section>
         ))}
     </div>
   );
