@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Auth from "../utils/auth";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_PROJECT, ADD_VEHICLE } from "../utils/mutations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,73 +13,90 @@ import {
   faCar,
 } from "@fortawesome/free-solid-svg-icons";
 
-function AddProject() {
-  const [projDate, setProjDate] = useState('');
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [image, setImage] = useState('');
-  const [budget, setBudget] = useState('');
-  const [timeSpent, setTimeSpent] = useState('');
+function CreateProject(props) {
+  const [formState, setFormState] = useState({
+    projDate: "",
+    name: "",
+    description: "",
+    image: "",
+    budget: "",
+    timeSpent: "",
+  });
 
-  const [addProject, { data }] = useMutation(ADD_PROJECT);
+  // const [projDate, setProjDate] = useState("");
+  // const [name, setName] = useState("");
+  // const [description, setDescription] = useState("");
+  // const [image, setImage] = useState("");
+  // const [budget, setBudget] = useState("");
+  // const [timeSpent, setTimeSpent] = useState("");
+
+  const [addProject] = useMutation(ADD_PROJECT);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(event.target.value);
     const mutationResponse = await addProject({
       variables: {
-        name: setName.name,
-        description: setDescription.description,
-        budget: setBudget.budget,
-        timeSpent: setTimeSpent.timeSpent,
+        projDate: formState.projDate,
+        name: formState.name,
+        description: formState.description,
+        budget: formState.budget,
+        timeSpent: formState.timeSpent,
       },
     });
-    console.log(mutationResponse)
+    console.log(mutationResponse);
+    const token = mutationResponse.data.addProject.token;
+    Auth.login(token);
   };
 
   const handleChange = (event) => {
-    const { target } = event;
-    const inputType = target.name;
-    const inputValue = target.value;
+    const { name, value } = event.target;
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
 
-    if (inputType === 'date') {
-      setProjDate(inputValue);
-    } else if (inputType === 'name') {
-      setName(inputValue);
-    } else if (inputType === 'description') {
-      setDescription(inputValue);
-    } else if (inputType === 'image') {
-      setImage(inputValue);
-    } else if (inputType === 'budget') {
-      setBudget(inputValue);
-    }  else {
-      setTimeSpent(inputValue);
-    }
+    //   const { target } = event;
+    //   const inputType = target.name;
+    //   const inputValue = target.value;
+
+    //   if (inputType === "date") {
+    //     setProjDate(inputValue);
+    //   } else if (inputType === "name") {
+    //     setName(inputValue);
+    //   } else if (inputType === "description") {
+    //     setDescription(inputValue);
+    //   } else if (inputType === "image") {
+    //     setImage(inputValue);
+    //   } else if (inputType === "budget") {
+    //     setBudget(inputValue);
+    //   } else {
+    //     setTimeSpent(inputValue);
+    //   }
+    // };
+
+    // const fileInput = document.querySelector('file-input');
+    // fileInput.onchange = () => {
+    //   if (fileInput.files.length > 0) {
+    //     const fileName = document.querySelector('file-name');
+    //     fileName.textContent = fileInput.files[0].name;
+    //   }
   };
-
-  // const fileInput = document.querySelector('file-input');
-  // fileInput.onchange = () => {
-  //   if (fileInput.files.length > 0) {
-  //     const fileName = document.querySelector('file-name');
-  //     fileName.textContent = fileInput.files[0].name;
-  //   }
-  // }
 
   return (
     <>
-      
       <div className="columns is-mobile">
         <div className="column is-10 is-offset-1">
           <div className="hero is-halfheight" id="form-container">
-          <h1>Add a project here</h1>
+            <h1>Add a project here</h1>
             <div className="columns is-multiline is-mobile">
               <div className="column is-5 is-offset-1">
                 <div className="field">
                   <p className="control has-icons-left">
                     <input
-                    className="input is-normal"
+                      className="input is-normal"
                       name="date"
-                      value={projDate}
+                      // value={projDate}
                       type="date"
                       placeholder="Project Date"
                       onChange={handleChange}
@@ -96,7 +113,7 @@ function AddProject() {
                     <input
                       className="input is-normal"
                       name="budget"
-                      value={budget}
+                      // value={budget}
                       type="number"
                       placeholder="Budget"
                       onChange={handleChange}
@@ -113,7 +130,7 @@ function AddProject() {
                     <input
                       className="input is-normal"
                       name="name"
-                      value={name}
+                      // value={name}
                       type="text"
                       placeholder="Name"
                       onChange={handleChange}
@@ -128,15 +145,12 @@ function AddProject() {
                 <div className="field">
                   <p className="control has-icons-left">
                     <textarea
-                      value={description}
+                      // value={description}
                       name="description"
                       className="textarea"
                       placeholder="Description"
                       onChange={handleChange}
                     ></textarea>
-                    {/* <span class="icon is-small is-right">
-                      <FontAwesomeIcon icon={faImages} />
-                    </span> */}
                   </p>
                 </div>
               </div>
@@ -146,7 +160,7 @@ function AddProject() {
                     <label className="file-label">
                       <input
                         className="file-input"
-                        value={image}
+                        // value={image}
                         type="file"
                         name="image"
                         onChange={handleChange}
@@ -155,7 +169,9 @@ function AddProject() {
                         <span className="file-icon">
                           <FontAwesomeIcon icon={faImages} />
                         </span>
-                        <span className="file-label"><FontAwesomeIcon icon={faUpload} /></span>
+                        <span className="file-label">
+                          <FontAwesomeIcon icon={faUpload} />
+                        </span>
                       </span>
                       <span className="file-name" placeholder="File"></span>
                     </label>
@@ -168,7 +184,7 @@ function AddProject() {
                     <input
                       className="input is-normal"
                       name="time"
-                      value={timeSpent}
+                      // value={timeSpent}
                       type="number"
                       placeholder="Time spent in hours"
                       onChange={handleChange}
@@ -182,7 +198,13 @@ function AddProject() {
               <div className="column" id="submit-btn">
                 <div className="field is-grouped is-grouped-centered">
                   <div className="control">
-                    <button className="button is-link" type="submit" onClick={handleFormSubmit}>Submit</button>
+                    <button
+                      className="button is-link"
+                      type="submit"
+                      onClick={handleFormSubmit}
+                    >
+                      Submit
+                    </button>
                   </div>
                   <div className="control">
                     <button className="button is-link is-light">Cancel</button>
@@ -190,7 +212,6 @@ function AddProject() {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -198,4 +219,4 @@ function AddProject() {
   );
 }
 
-export default AddProject;
+export default CreateProject;
