@@ -7,7 +7,7 @@ import ProjectList from "../components/ProjectList";
 
 function CurrentProjects() {
   const { loading, data } = useQuery(QUERY_PROJECTS);
-  console.log(data)
+  console.log(data);
   let projects = data?.projects || [];
   console.log(projects);
   return (
@@ -16,15 +16,17 @@ function CurrentProjects() {
         <div className="column is-10 is-offset-1">
           <div className="hero is-halfheight" id="home-container">
             List of projects goes here
-            <div className="columns">
-              <div className="column is-6">
+
                 {loading ? (
                   <div id="project-text">Loading...</div>
                 ) : (
-                  <ProjectList projects={projects} />
+                  <div className="columns is-mobile">
+                    <div className="column is-8">
+                      <ProjectList projects={projects} />
+                    </div>
+                  </div>
                 )}
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
