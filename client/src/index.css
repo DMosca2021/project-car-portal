@@ -32,8 +32,10 @@ body {
   background-color: blue;
   background-image: url("https://m.media-amazon.com/images/I/81PrPab6QaL._AC_SX466_.jpg");
   background-attachment: fixed;
+  background-repeat: repeat;
   background-position: center; 
   height: 100vh;
+  max-height: 100%;
 }
 
 /* #background {
@@ -62,8 +64,6 @@ body {
   color: red;
   font-size: 20px;
   margin-top: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
   background-position: center;
   background-color: white;
   justify-content: center;
@@ -78,8 +78,6 @@ body {
   font-size: 40px;
   color: red;
   margin-top: 50px;
-  margin-left: 50px;
-  margin-right: 50px;
   background-position: center;
   background-color: white;
   justify-content: center;
@@ -95,7 +93,6 @@ body {
   background-image: url(https://textures.world/wp-content/uploads/2018/10/Aluminum-Brushed-Metal-Seamless-Background-Textures-2-copy.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 .navbar-item {
@@ -114,7 +111,30 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  .card {
-    width: 100%;
+  #homecontainer {
+    font-size: 15px;
+  }
+
+  #welcome-font {
+    font-size: 25px;
+    padding: 5px;
+  }
+
+  #project-text {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  #homecontainer {
+    font-size: 18px;
+  }
+
+  #welcome-font {
+    font-size: 15px;
+  }
+
+  #project-text {
+    font-size: 15px;
   }
 }

@@ -2,6 +2,11 @@ import React, { useState } from "react";
 import Auth from "../utils/auth";
 import { useMutation } from "@apollo/client";
 import { ADD_PROJECT, ADD_VEHICLE } from "../utils/mutations";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCar } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
+import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
+import { faFileSignature } from "@fortawesome/free-solid-svg-icons";
 
 function AddProject(props) {
   const [formState, setFormState] = useState({
@@ -42,134 +47,68 @@ function AddProject(props) {
 
   return (
     <>
-      <div className="hero is-halfheight" id="form-container">
-
-
-        <div className="ui center aligned piled grey very padded segment" id="form-card">
-          <form className="ui form" id="form">
-            <h4 className="ui dividing header">Project Information</h4>
-
-            <div className="six wide field">
-              <label>Project Started On</label>
-              <input
-                type="text"
-                name="project[date]"
-                placeholder="Date"
-              ></input>
-            </div>
-
-            <div className="six wide field">
-              <label>
-                Project Total Budget{" "}
-                <i className="money bill alternate outline icon"></i>
-              </label>
-              <input
-                type="text"
-                name="project[budget]"
-                placeholder="Budget"
-              ></input>
-            </div>
-
-            <div className="six wide field">
-              <label>Time Spent On Project</label>
-              <input
-                type="text"
-                name="shipping[last-name]"
-                placeholder="# of Hours"
-              ></input>
-            </div>
-
-            <div className="seven wide field">
-              <label>Project Name</label>
-              <input
-                type="text"
-                name="shipping[address-2]"
-                placeholder="Name of your project"
-              ></input>
-            </div>
-
-            <div className="seven wide field">
-              <label>Project Description</label>
-              <input
-                type="text"
-                name="shipping[address]"
-                placeholder="A breif description of your project"
-              ></input>
-            </div>
-
-            <div className="seven wide field">
-              <label>Project Image</label>
-              <input
-                type="text"
-                name="shipping[address]"
-                placeholder="A picture of your project"
-              ></input>
-            </div>
-
-            <h4 className="ui dividing header">Vehicle Information</h4>
-
-            <div className="seven wide field">
-              <label>Vehicle Type</label>
-              <input
-                type="text"
-                name="shipping[address-2]"
-                placeholder="Type of vehicle"
-              ></input>
-            </div>
-
-            <div className="field">
-              <div className="three fields">
+      <div className="columns is-mobile">
+        <div className="column is-10 is-offset-1">
+          <div className="hero is-halfheight" id="form-container">
+            <div className="columns is-multiline is-mobile">
+              <div className="column is-5">
                 <div className="field">
-                  <label>Year</label>
-                  <input
-                    type="text"
-                    name="shipping[first-name]"
-                    placeholder="First Name"
-                  ></input>
+                  <p class="control has-icons-left">
+                    <input
+                      class="input is-normal"
+                      type="text"
+                      placeholder="Project Date"
+                    ></input>
+                    <span class="icon is-small is-left">
+                      <FontAwesomeIcon icon={faCalendarAlt} />
+                    </span>
+                  </p>
                 </div>
+              </div>
+              <div className="column is-5">
                 <div className="field">
-                  <label>Make</label>
-                  <input
-                    type="text"
-                    name="shipping[last-name]"
-                    placeholder="Last Name"
-                  ></input>
+                  <p class="control has-icons-left">
+                    <input
+                      class="input is-normal"
+                      type="text"
+                      placeholder="Budget"
+                    ></input>
+                    <span class="icon is-small is-left">
+                      <FontAwesomeIcon icon={faDollarSign} />
+                    </span>
+                  </p>
                 </div>
+              </div>
+              <div className="column is-4">
                 <div className="field">
-                  <label>Model</label>
-                  <input
-                    type="text"
-                    name="shipping[last-name]"
-                    placeholder="Last Name"
-                  ></input>
+                  <p class="control has-icons-left">
+                    <input
+                      class="input is-normal"
+                      type="text"
+                      placeholder="Name"
+                    ></input>
+                    <span class="icon is-small is-left">
+                      <FontAwesomeIcon icon={faCar} />
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div className="column is-10">
+                <div class="field">
+                  <p class="control has-icons-left">
+                    <input
+                      class="input"
+                      type="description"
+                      placeholder="Description"
+                    ></input>
+                    <span class="icon is-small is-left">
+                      <FontAwesomeIcon icon={faFileSignature} />
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>
-
-            <div className="fields">
-              <div className="seven wide field">
-                <label>Card Number</label>
-                <input
-                  type="text"
-                  name="card[number]"
-                  maxLength="16"
-                  placeholder="Card #"
-                ></input>
-              </div>
-              <div className="three wide field">
-                <label>CVC</label>
-                <input
-                  type="text"
-                  name="card[cvc]"
-                  maxLength="3"
-                  placeholder="CVC"
-                ></input>
-              </div>
-            </div>
-            <div className="ui button" tabIndex="0">
-              Submit Order
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </>
