@@ -1,27 +1,31 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
+  createHttpLink,
+} from "@apollo/client";
+import { setContext } from "@apollo/client/link/context";
 
-import Home from './pages/Home';
-import ProjectForm from './pages/ProjectForm'
-import NoMatch from './pages/NoMatch';
-import Login from './pages/Login';
-import Signup from './pages/Signup';
-import Nav from './components/Nav';
-import { StoreProvider } from './utils/GlobalState';
-import CurrentProjects from './pages/CurrentProjects';
+import Home from "./pages/Home";
+import ProjectForm from "./pages/ProjectForm";
+import NoMatch from "./pages/NoMatch";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import Nav from "./components/Nav";
+import CurrentProjects from "./pages/CurrentProjects";
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: "/graphql",
 });
 
 const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
+  const token = localStorage.getItem("id_token");
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
+      authorization: token ? `Bearer ${token}` : "",
     },
   };
 });
@@ -36,17 +40,15 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div className="main-contain">
-          <StoreProvider> {/* Change this name to the "ProjectProvider" to make more sense with theme of project */}
-            <Nav /> {/* If we want to add a drop down menu or change to side bar menu must do inside Nav component This shows on all pages, add footer in opposite location for same effect */}
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/signup" component={Signup} />
-              <Route exact path="/projectForm" component={ProjectForm} />
-              <Route exact path="/currentProjects" component={CurrentProjects} /> {/* This will become list of current projects after user logs in. */}
-              <Route component={NoMatch} />
-            </Switch>
-          </StoreProvider>
+          <Nav />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
+            <Route exact path="/projectForm" component={ProjectForm} />
+            <Route exact path="/currentProjects" component={CurrentProjects} />
+            <Route component={NoMatch} />
+          </Switch>
         </div>
       </Router>
     </ApolloProvider>

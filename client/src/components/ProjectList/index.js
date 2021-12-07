@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
-import { UPDATE_PROJECTS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
 import { QUERY_PROJECTS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
-import spinner from '../../assets/spinner.gif';
 
   const ProjectList = ({ projects }) => {
     console.log(projects)
