@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
@@ -10,12 +11,15 @@ function CurrentProjects() {
   console.log(data);
   let projects = data?.projects || [];
   console.log(projects);
+
+  let [ list, createList] = useState('');
+
   return (
     <>
       <div className="columns is-mobile">
         <div className="column is-10 is-offset-1">
           <div className="hero is-halfheight" id="home-container">
-            List of projects goes here
+            List of projects goes here...
 
                 {loading ? (
                   <div id="project-text">Loading...</div>

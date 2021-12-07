@@ -14,7 +14,7 @@ const ProjectList = ({ projects }) => {
             <h3>Lets See if this works?!?</h3>
             <ul>
               <li>{project.name}</li>
-              <li>{project.description}</li>
+              {/* <li>{project.description}</li> */}
             </ul>
 
             {/* <div className="card-image">

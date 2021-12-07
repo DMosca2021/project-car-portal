@@ -13,41 +13,48 @@ import {
   faCar,
 } from "@fortawesome/free-solid-svg-icons";
 
-function AddProject(props) {
-  const [formState, setFormState] = useState({
-    //props?
-    name: "",
-    description: "",
-    budget: "",
-    timeSpent: "",
-  });
-  const [addProject] = useMutation(ADD_PROJECT);
+function AddProject() {
+  const [projDate, setProjDate] = useState('');
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [image, setImage] = useState('');
+  const [budget, setBudget] = useState('');
+  const [timeSpent, setTimeSpent] = useState('');
+
+  const [addProject, { data }] = useMutation(ADD_PROJECT);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(event.target.value);
     const mutationResponse = await addProject({
       variables: {
-        name: formState.name,
-        description: formState.description,
-        budget: formState.budget,
-        timeSpent: formState.timeSpent,
+        name: setName.name,
+        description: setDescription.description,
+        budget: setBudget.budget,
+        timeSpent: setTimeSpent.timeSpent,
       },
     });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
-    console.log(mutationResponse);
-    console.log(token);
-    console.log(Auth.login(token));
+    console.log(mutationResponse)
   };
 
   const handleChange = (event) => {
-    console.log(event.target.value);
-    const { name, value } = event.target;
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
+    const { target } = event;
+    const inputType = target.name;
+    const inputValue = target.value;
+
+    if (inputType === 'date') {
+      setProjDate(inputValue);
+    } else if (inputType === 'name') {
+      setName(inputValue);
+    } else if (inputType === 'description') {
+      setDescription(inputValue);
+    } else if (inputType === 'image') {
+      setImage(inputValue);
+    } else if (inputType === 'budget') {
+      setBudget(inputValue);
+    }  else {
+      setTimeSpent(inputValue);
+    }
   };
 
   // const fileInput = document.querySelector('file-input');
@@ -70,9 +77,12 @@ function AddProject(props) {
                 <div className="field">
                   <p className="control has-icons-left">
                     <input
-                      className="input is-normal"
-                      type="text"
+                    className="input is-normal"
+                      name="date"
+                      value={projDate}
+                      type="date"
                       placeholder="Project Date"
+                      onChange={handleChange}
                     ></input>
                     <span className="icon is-small is-left">
                       <FontAwesomeIcon icon={faCalendarAlt} />
@@ -85,8 +95,11 @@ function AddProject(props) {
                   <p className="control has-icons-left">
                     <input
                       className="input is-normal"
+                      name="budget"
+                      value={budget}
                       type="number"
                       placeholder="Budget"
+                      onChange={handleChange}
                     ></input>
                     <span className="icon is-small is-left">
                       <FontAwesomeIcon icon={faDollarSign} />
@@ -99,8 +112,11 @@ function AddProject(props) {
                   <p className="control has-icons-left">
                     <input
                       className="input is-normal"
+                      name="name"
+                      value={name}
                       type="text"
                       placeholder="Name"
+                      onChange={handleChange}
                     ></input>
                     <span className="icon is-small is-left">
                       <FontAwesomeIcon icon={faCar} />
@@ -112,8 +128,11 @@ function AddProject(props) {
                 <div className="field">
                   <p className="control has-icons-left">
                     <textarea
+                      value={description}
+                      name="description"
                       className="textarea"
                       placeholder="Description"
+                      onChange={handleChange}
                     ></textarea>
                     {/* <span class="icon is-small is-right">
                       <FontAwesomeIcon icon={faImages} />
@@ -127,8 +146,10 @@ function AddProject(props) {
                     <label className="file-label">
                       <input
                         className="file-input"
+                        value={image}
                         type="file"
-                        name="resume"
+                        name="image"
+                        onChange={handleChange}
                       ></input>
                       <span className="file-cta">
                         <span className="file-icon">
@@ -136,7 +157,7 @@ function AddProject(props) {
                         </span>
                         <span className="file-label"><FontAwesomeIcon icon={faUpload} /></span>
                       </span>
-                      <span className="file-name"></span>
+                      <span className="file-name" placeholder="File"></span>
                     </label>
                   </div>
                 </div>
@@ -145,9 +166,12 @@ function AddProject(props) {
                 <div className="field">
                   <p className="control has-icons-left">
                     <input
-                      className="input"
+                      className="input is-normal"
+                      name="time"
+                      value={timeSpent}
                       type="number"
                       placeholder="Time spent in hours"
+                      onChange={handleChange}
                     ></input>
                     <span className="icon is-small is-left">
                       <FontAwesomeIcon icon={faStopwatch} />
@@ -158,7 +182,7 @@ function AddProject(props) {
               <div className="column" id="submit-btn">
                 <div className="field is-grouped is-grouped-centered">
                   <div className="control">
-                    <button className="button is-link" type="submit">Submit</button>
+                    <button className="button is-link" type="submit" onClick={handleFormSubmit}>Submit</button>
                   </div>
                   <div className="control">
                     <button className="button is-link is-light">Cancel</button>
@@ -166,6 +190,7 @@ function AddProject(props) {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
