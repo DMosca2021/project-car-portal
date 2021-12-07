@@ -47,6 +47,8 @@
 }
 
 #form-container {
+  height: 500px;
+  width: 1200px;
   font-family: "Permanent Marker", cursive;
   color: red;
   font-size: 20px;
@@ -55,12 +57,14 @@
   background-color: white;
   justify-content: center;
   align-items: center;
-  border: 5px groove rgba(85, 85, 85, 0.616);
+  border: 9px groove rgba(85, 85, 85, 0.616);
   border-radius: 2px;
   box-shadow: 0px 12px 2px 1px rgba(0, 0, 255, 0.45);
 }
 
 #home-container {
+  height: 500px;
+  width: 1200px;
   font-family: "Permanent Marker", cursive;
   font-size: 40px;
   color: red;
@@ -70,7 +74,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  border: 5px groove rgba(85, 85, 85, 0.616);
+  border: 9px groove rgba(85, 85, 85, 0.616);
   border-radius: 2px;
   box-shadow: 0px 12px 2px 1px rgba(0, 0, 255, 0.45);
 }
@@ -80,6 +84,7 @@
   background-image: url(https://textures.world/wp-content/uploads/2018/10/Aluminum-Brushed-Metal-Seamless-Background-Textures-2-copy.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  border: 1px solid black;
 }
 
 .navbar-item {
@@ -102,6 +107,11 @@
   border: 2px solid black;
   padding: 5px;
   margin-bottom: 3px;
+}
+
+#submit-btn {
+  margin-top: 0;
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width: 768px) {
