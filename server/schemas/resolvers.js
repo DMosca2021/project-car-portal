@@ -14,7 +14,7 @@ const resolvers = {
       throw new AuthenticationError("Not logged in");
     },
 
-    getAllUsers: async () => {
+    users: async () => {
       return User.find().populate("project");
     },
 
@@ -22,7 +22,7 @@ const resolvers = {
       return await Project.findById(_id).populate("vehicle");
     },
 
-    getAllProjects: async () => {
+    projects: async () => {
       return await Project.find().populate("vehicle");
     },
 

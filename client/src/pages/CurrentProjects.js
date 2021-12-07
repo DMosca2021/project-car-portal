@@ -7,6 +7,7 @@ import ProjectList from "../components/ProjectList";
 
 function CurrentProjects() {
   const { loading, data } = useQuery(QUERY_PROJECTS);
+  console.log(data)
   let projects = data?.projects || [];
   console.log(projects);
   return (
