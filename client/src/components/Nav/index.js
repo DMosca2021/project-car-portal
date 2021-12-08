@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClipboardList } from "@fortawesome/free-solid-svg-icons";
 import { faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
+import { faTruckPickup } from "@fortawesome/free-solid-svg-icons";
+import { faTruckMonster } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
+
 
 function Nav() {
   document.addEventListener("DOMContentLoaded", () => {
@@ -73,18 +77,18 @@ function Nav() {
           </div>
           <div id="navbarBasicExample" className="navbar-menu">
             <div className="navbar-start">
-              <Link className="navbar-item" to="/">
-                Home
+              <Link className="navbar-item" to="/"><FontAwesomeIcon icon={faHome} />
+                - Home
               </Link>
               <div className="navbar-item has-dropdown is-hoverable">
                 <a className="navbar-link">More</a>
                 <div className="navbar-dropdown">
                   <Link className="navbar-item" to="/projectForm">
                     {" "}
-                    New Project
+                    Create Project_<FontAwesomeIcon icon={faTruckPickup} />
                   </Link>
                   <Link className="navbar-item" to="/currentProjects">
-                    Current Projects
+                    Current Projects_<FontAwesomeIcon icon={faTruckMonster} />
                   </Link>
                   <a className="navbar-item">Contact</a>
                   <hr className="navbar-divider"></hr>
