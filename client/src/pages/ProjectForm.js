@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
-import { ADD_PROJECT } from "../utils/mutations";
+import { ADD_PROJECT, ADD_VEHICLE } from "../utils/mutations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStopwatch,
@@ -11,15 +11,12 @@ import {
   faDollarSign,
   faCalendarAlt,
   faCar,
-  faHome,
-  faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 
 function CreateProject(props) {
   // if (!Auth.loggedIn()) {
   //   return <h3>Please Log in</h3>
   // }
-  // https://reactjs.org/docs/conditional-rendering.html
 
   const [formState, setFormState] = useState({
     projectDate: "",
@@ -29,6 +26,13 @@ function CreateProject(props) {
     budget: "",
     timeSpent: "",
   });
+
+  // const [projDate, setProjDate] = useState("");
+  // const [name, setName] = useState("");
+  // const [description, setDescription] = useState("");
+  // const [image, setImage] = useState("");
+  // const [budget, setBudget] = useState("");
+  // const [timeSpent, setTimeSpent] = useState("");
 
   const [addProject, { error }] = useMutation(ADD_PROJECT, {
     errorPolicy: "all",
@@ -45,7 +49,8 @@ function CreateProject(props) {
     try {
       const mutationResponse = await addProject({
         variables: {
-          input: formState,
+          input: formState
+          
         },
       });
       console.log(mutationResponse);
@@ -58,13 +63,32 @@ function CreateProject(props) {
 
   const handleChange = (event) => {
     let { name, value, type } = event.target;
-    if (type === "number") {
+    if (type === "number"){
       value = parseInt(value);
     }
     setFormState({
       ...formState,
       [name]: value,
     });
+
+    //   const { target } = event;
+    //   const inputType = target.name;
+    //   const inputValue = target.value;
+
+    //   if (inputType === "date") {
+    //     setProjDate(inputValue);
+    //   } else if (inputType === "name") {
+    //     setName(inputValue);
+    //   } else if (inputType === "description") {
+    //     setDescription(inputValue);
+    //   } else if (inputType === "image") {
+    //     setImage(inputValue);
+    //   } else if (inputType === "budget") {
+    //     setBudget(inputValue);
+    //   } else {
+    //     setTimeSpent(inputValue);
+    //   }
+    // };
 
     // const fileInput = document.querySelector('file-input');
     // fileInput.onchange = () => {
@@ -91,6 +115,7 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="projectDate"
+                      // value={projDate}
                       type="date"
                       placeholder="Project Date"
                       onChange={handleChange}
@@ -107,6 +132,7 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="budget"
+                      // value={budget}
                       type="number"
                       placeholder="Budget"
                       onChange={handleChange}
@@ -123,6 +149,7 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="name"
+                      // value={name}
                       type="text"
                       placeholder="Name"
                       onChange={handleChange}
@@ -137,6 +164,7 @@ function CreateProject(props) {
                 <div className="field">
                   <p className="control has-icons-left">
                     <textarea
+                      // value={description}
                       name="description"
                       className="textarea"
                       placeholder="Description"
@@ -152,10 +180,10 @@ function CreateProject(props) {
                     <label className="file-label">
                       <input
                         className="file-input"
+                        // value={image}
                         type="file"
                         name="image"
                         onChange={handleChange}
-                        disabled
                       ></input>
                       <span className="file-cta">
                         <span className="file-icon">
@@ -165,9 +193,7 @@ function CreateProject(props) {
                           <FontAwesomeIcon icon={faUpload} />
                         </span>
                       </span>
-                      <span className="file-name" placeholder="File">
-                        Coming Soon!
-                      </span>
+                      <span className="file-name" placeholder="File"></span>
                     </label>
                   </div>
                 </div>
@@ -178,6 +204,7 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="timeSpent"
+                      // value={timeSpent}
                       type="number"
                       placeholder="Time spent in hours"
                       onChange={handleChange}
@@ -195,18 +222,12 @@ function CreateProject(props) {
                       className="button is-link"
                       type="submit"
                       onClick={handleFormSubmit}
-                    ><FontAwesomeIcon icon={faThumbsUp} />
+                    >
                       Submit
                     </button>
                   </div>
                   <div className="control">
-                    <button className="button is-link is-light">
-                      {" "}
-                      <Link className="button is-link is-light" to="/">
-                        <FontAwesomeIcon icon={faHome} />
-                      </Link>
-                      Cancel
-                    </button>
+                    <button className="button is-link is-light">Cancel</button>
                   </div>
                 </div>
               </div>
