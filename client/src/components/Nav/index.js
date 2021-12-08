@@ -100,7 +100,7 @@ function Nav() {
               <div className="navbar-item">
                 <div className="buttons">
                   <Link
-                    className="button is-link is-outlined"
+                    className="button is-link "
                     to="/signup"
                     id="signup-btn"
                   >
