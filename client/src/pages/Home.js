@@ -6,12 +6,12 @@ const Home = () => {
   return (
     <div className="columns is-mobile">
       <div className="column is-10 is-offset-1">
-        <div className="hero is-halfheight" id="home-container">
+        <div className="hero is-halfheight" id="board-container">
           <br></br>
           <h1 id="welcome-font">
             Welcome to the Project car Portal!<br></br>
-            Currently I am getting this project off the jackstands so check back
-            soon for an updated page. _<FontAwesomeIcon icon={faHighlighter} />
+            Sign up or Log in to begin keeping <br></br>
+            track of your projects! _<FontAwesomeIcon icon={faHighlighter} />
           </h1>
         </div>
       </div>

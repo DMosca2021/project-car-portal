@@ -45,11 +45,21 @@
   border: 1px solid black;
 }
 
-#home-container {
+#login-icon {
+  margin-right: 5px;
+}
+
+#welcome-font {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 55px;
+}
+
+#board-container {
   height: 500px;
   width: 1200px;
   font-family: "Permanent Marker", cursive;
-  font-size: 40px;
+  font-size: 20px;
   color: red;
   margin-top: 50px;
   background-position: center;
@@ -83,6 +93,10 @@
   overflow: auto;
 }
 
+.file-name {
+  color: grey;
+}
+
 #submit-btn {
   margin-top: 0;
   margin-bottom: 50px;
@@ -104,7 +118,7 @@
 
 
 @media screen and (max-width: 768px) {
-  #homecontainer {
+  #board-container {
     font-size: 15px;
   }
 
@@ -119,7 +133,7 @@
 }
 
 @media screen and (max-width: 425px) {
-  #homecontainer {
+  #board-container {
     font-size: 18px;
   }
 

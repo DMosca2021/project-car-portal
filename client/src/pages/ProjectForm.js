@@ -15,9 +15,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function CreateProject(props) {
-  // if (!Auth.loggedIn()) {
-  //   return <h3>Please Log in</h3>
-  // }
 
   const [formState, setFormState] = useState({
     projectDate: "",
@@ -27,13 +24,6 @@ function CreateProject(props) {
     budget: "",
     timeSpent: "",
   });
-
-  // const [projDate, setProjDate] = useState("");
-  // const [name, setName] = useState("");
-  // const [description, setDescription] = useState("");
-  // const [image, setImage] = useState("");
-  // const [budget, setBudget] = useState("");
-  // const [timeSpent, setTimeSpent] = useState("");
 
   const [addProject, { error }] = useMutation(ADD_PROJECT, {
     errorPolicy: "all",
@@ -72,24 +62,6 @@ function CreateProject(props) {
       [name]: value,
     });
 
-    //   const { target } = event;
-    //   const inputType = target.name;
-    //   const inputValue = target.value;
-
-    //   if (inputType === "date") {
-    //     setProjDate(inputValue);
-    //   } else if (inputType === "name") {
-    //     setName(inputValue);
-    //   } else if (inputType === "description") {
-    //     setDescription(inputValue);
-    //   } else if (inputType === "image") {
-    //     setImage(inputValue);
-    //   } else if (inputType === "budget") {
-    //     setBudget(inputValue);
-    //   } else {
-    //     setTimeSpent(inputValue);
-    //   }
-    // };
 
     // const fileInput = document.querySelector('file-input');
     // fileInput.onchange = () => {
@@ -102,7 +74,7 @@ function CreateProject(props) {
   return (
     <>
       <div className="columns is-mobile">
-        <div className="column is-6 is-offset-1" id="form-container">
+        <div className="column is-10 is-offset-1" id="board-container">
           <form className="hero is-halfheight" onSubmit={handleFormSubmit}>
             <h1 className="column is-3 is-offset-5">Add a project here _<FontAwesomeIcon icon={faHighlighter} /></h1>
             <div className="columns is-multiline is-mobile">
@@ -112,7 +84,6 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="projectDate"
-                      // value={projDate}
                       type="date"
                       placeholder="Project Date"
                       onChange={handleChange}
@@ -129,7 +100,6 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="budget"
-                      // value={budget}
                       type="number"
                       placeholder="Budget"
                       onChange={handleChange}
@@ -146,7 +116,6 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="name"
-                      // value={name}
                       type="text"
                       placeholder="Name"
                       onChange={handleChange}
@@ -161,7 +130,6 @@ function CreateProject(props) {
                 <div className="field">
                   <p className="control has-icons-left">
                     <textarea
-                      // value={description}
                       name="description"
                       className="textarea"
                       placeholder="Description"
@@ -177,10 +145,10 @@ function CreateProject(props) {
                     <label className="file-label">
                       <input
                         className="file-input"
-                        // value={image}
                         type="file"
                         name="image"
                         onChange={handleChange}
+                        disabled
                       ></input>
                       <span className="file-cta">
                         <span className="file-icon">
@@ -190,7 +158,7 @@ function CreateProject(props) {
                           <FontAwesomeIcon icon={faUpload} />
                         </span>
                       </span>
-                      <span className="file-name" placeholder="File"></span>
+                      <span className="file-name" placeholder="File">Coming Soon</span>
                     </label>
                   </div>
                 </div>
@@ -201,7 +169,6 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="timeSpent"
-                      // value={timeSpent}
                       type="number"
                       placeholder="Time spent in hours"
                       onChange={handleChange}
@@ -216,7 +183,7 @@ function CreateProject(props) {
                 <div className="field is-grouped is-grouped-centered">
                   <div className="control">
                     <button
-                      className="button is-link"
+                      className="button is-dark"
                       type="submit"
                       onClick={handleFormSubmit}
                     >
@@ -224,7 +191,7 @@ function CreateProject(props) {
                     </button>
                   </div>
                   <div className="control">
-                    <button className="button is-link is-light">Cancel</button>
+                    <button className="button is-light">Cancel</button>
                   </div>
                 </div>
               </div>

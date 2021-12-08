@@ -90,9 +90,9 @@ function Nav() {
                   <Link className="navbar-item" to="/currentProjects">
                     Current Projects_<FontAwesomeIcon icon={faTruckMonster} />
                   </Link>
-                  <a className="navbar-item">Contact</a>
+                  {/* <a className="navbar-item">Contact</a>
                   <hr className="navbar-divider"></hr>
-                  <a className="navbar-item">Report an issue</a>
+                  <a className="navbar-item">Report an issue</a> */}
                 </div>
               </div>
             </div>
@@ -100,11 +100,11 @@ function Nav() {
               <div className="navbar-item">
                 <div className="buttons">
                   <Link
-                    className="button is-link "
+                    className="button is-dark "
                     to="/signup"
                     id="signup-btn"
                   >
-                    <FontAwesomeIcon icon={faClipboardList} />
+                    <FontAwesomeIcon icon={faClipboardList} id="login-icon" />
                     Sign up{" "}
                   </Link>
                   {showLogOut()}
