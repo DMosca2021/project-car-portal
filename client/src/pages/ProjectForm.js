@@ -14,6 +14,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function CreateProject(props) {
+  // if (!Auth.loggedIn()) {
+  //   return <h3>Please Log in</h3>
+  // }
+
   const [formState, setFormState] = useState({
     projDate: "",
     name: "",
@@ -34,7 +38,6 @@ function CreateProject(props) {
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(event.target.value);
     const mutationResponse = await addProject({
       variables: {
         projDate: formState.projDate,
