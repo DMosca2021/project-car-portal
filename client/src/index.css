@@ -112,6 +112,10 @@
   margin-bottom: 50px;
 }
 
+.file-name {
+  color: grey;
+}
+
 @media screen and (max-width: 768px) {
   #homecontainer {
     font-size: 15px;
