@@ -60,6 +60,7 @@
   border: 9px groove rgba(85, 85, 85, 0.616);
   border-radius: 2px;
   box-shadow: 0px 12px 2px 1px rgba(0, 0, 255, 0.45);
+  overflow: auto;
 }
 
 #home-container {
@@ -77,6 +78,7 @@
   border: 9px groove rgba(85, 85, 85, 0.616);
   border-radius: 2px;
   box-shadow: 0px 12px 2px 1px rgba(0, 0, 255, 0.45);
+  overflow: auto;
 }
 
 #navbarBasicExample {
