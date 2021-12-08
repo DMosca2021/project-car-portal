@@ -1,4 +1,5 @@
 // import { idbPromise } from "../../utils/helpers";
+import { pathToArray } from "graphql/jsutils/Path";
 import Auth from "../../utils/auth";
 
 
@@ -17,8 +18,11 @@ const ProjectList = ({ projects }) => {
           <section className="section" key={project._id} id="project-card">
             <h3>Lets See if this works?!?</h3>
             <ul>
+              <li>{project.date}</li>
               <li>{project.name}</li>
-              {/* <li>{project.description}</li> */}
+              <li>{project.description}</li>
+              <li>{project.budget}</li>
+              <li>{project.timeSpent}</li>
             </ul>
 
             {/* <div className="card-image">

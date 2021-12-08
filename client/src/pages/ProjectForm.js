@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
@@ -19,7 +19,7 @@ function CreateProject(props) {
   // }
 
   const [formState, setFormState] = useState({
-    projDate: "",
+    projectDate: "",
     name: "",
     description: "",
     image: "",
@@ -34,26 +34,38 @@ function CreateProject(props) {
   // const [budget, setBudget] = useState("");
   // const [timeSpent, setTimeSpent] = useState("");
 
-  const [addProject] = useMutation(ADD_PROJECT);
+  const [addProject, { error }] = useMutation(ADD_PROJECT, {
+    errorPolicy: "all",
+  });
+
+  useEffect(() => {
+    console.log(error);
+  }, [error]);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await addProject({
-      variables: {
-        projDate: formState.projDate,
-        name: formState.name,
-        description: formState.description,
-        budget: formState.budget,
-        timeSpent: formState.timeSpent,
-      },
-    });
-    console.log(mutationResponse);
-    const token = mutationResponse.data.addProject.token;
-    Auth.login(token);
+    console.log(formState);
+
+    try {
+      const mutationResponse = await addProject({
+        variables: {
+          input: formState
+          
+        },
+      });
+      console.log(mutationResponse);
+      const token = mutationResponse.data.addProject.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(error);
+    }
   };
 
   const handleChange = (event) => {
-    const { name, value } = event.target;
+    let { name, value, type } = event.target;
+    if (type === "number"){
+      value = parseInt(value);
+    }
     setFormState({
       ...formState,
       [name]: value,
@@ -90,7 +102,11 @@ function CreateProject(props) {
     <>
       <div className="columns is-mobile">
         <div className="column is-10 is-offset-1">
-          <div className="hero is-halfheight" id="form-container">
+          <form
+            className="hero is-halfheight"
+            id="form-container"
+            onSubmit={handleFormSubmit}
+          >
             <h1>Add a project here</h1>
             <div className="columns is-multiline is-mobile">
               <div className="column is-5 is-offset-1">
@@ -98,7 +114,7 @@ function CreateProject(props) {
                   <p className="control has-icons-left">
                     <input
                       className="input is-normal"
-                      name="date"
+                      name="projectDate"
                       // value={projDate}
                       type="date"
                       placeholder="Project Date"
@@ -152,6 +168,7 @@ function CreateProject(props) {
                       name="description"
                       className="textarea"
                       placeholder="Description"
+                      type="text"
                       onChange={handleChange}
                     ></textarea>
                   </p>
@@ -186,7 +203,7 @@ function CreateProject(props) {
                   <p className="control has-icons-left">
                     <input
                       className="input is-normal"
-                      name="time"
+                      name="timeSpent"
                       // value={timeSpent}
                       type="number"
                       placeholder="Time spent in hours"
@@ -215,7 +232,7 @@ function CreateProject(props) {
                 </div>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </>

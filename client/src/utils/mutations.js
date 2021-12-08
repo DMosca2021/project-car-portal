@@ -35,6 +35,7 @@ export const ADD_USER = gql`
 export const ADD_PROJECT = gql`
 mutation ($input: ProjectInput!){
   addProject (input: $input) {
+    projectDate
     name
     description
     image
