@@ -11,6 +11,7 @@ import {
   faDollarSign,
   faCalendarAlt,
   faCar,
+  faHighlighter,
 } from "@fortawesome/free-solid-svg-icons";
 
 function CreateProject(props) {
@@ -101,15 +102,11 @@ function CreateProject(props) {
   return (
     <>
       <div className="columns is-mobile">
-        <div className="column is-10 is-offset-1">
-          <form
-            className="hero is-halfheight"
-            id="form-container"
-            onSubmit={handleFormSubmit}
-          >
-            <h1>Add a project here</h1>
+        <div className="column is-6 is-offset-1" id="form-container">
+          <form className="hero is-halfheight" onSubmit={handleFormSubmit}>
+            <h1 className="column is-3 is-offset-5">Add a project here _<FontAwesomeIcon icon={faHighlighter} /></h1>
             <div className="columns is-multiline is-mobile">
-              <div className="column is-5 is-offset-1">
+              <div className="column is-4 is-offset-2">
                 <div className="field">
                   <p className="control has-icons-left">
                     <input
@@ -126,7 +123,7 @@ function CreateProject(props) {
                   </p>
                 </div>
               </div>
-              <div className="column is-5 ">
+              <div className="column is-4 ">
                 <div className="field">
                   <p className="control has-icons-left">
                     <input
@@ -143,7 +140,7 @@ function CreateProject(props) {
                   </p>
                 </div>
               </div>
-              <div className="column is-6 is-offset-1">
+              <div className="column is-6 is-offset-2">
                 <div className="field">
                   <p className="control has-icons-left">
                     <input
@@ -160,7 +157,7 @@ function CreateProject(props) {
                   </p>
                 </div>
               </div>
-              <div className="column is-10 is-offset-1">
+              <div className="column is-8 is-offset-2">
                 <div className="field">
                   <p className="control has-icons-left">
                     <textarea
@@ -174,7 +171,7 @@ function CreateProject(props) {
                   </p>
                 </div>
               </div>
-              <div className="column is-5 is-offset-1">
+              <div className="column is-3 is-offset-2">
                 <div className="field">
                   <div className="file has-name">
                     <label className="file-label">
@@ -215,7 +212,7 @@ function CreateProject(props) {
                   </p>
                 </div>
               </div>
-              <div className="column" id="submit-btn">
+              <div className="column is-full" id="submit-btn">
                 <div className="field is-grouped is-grouped-centered">
                   <div className="control">
                     <button
