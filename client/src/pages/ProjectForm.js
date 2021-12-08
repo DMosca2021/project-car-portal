@@ -115,7 +115,6 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="projectDate"
-                      // value={projDate}
                       type="date"
                       placeholder="Project Date"
                       onChange={handleChange}
@@ -132,7 +131,6 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="budget"
-                      // value={budget}
                       type="number"
                       placeholder="Budget"
                       onChange={handleChange}
@@ -149,7 +147,6 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="name"
-                      // value={name}
                       type="text"
                       placeholder="Name"
                       onChange={handleChange}
@@ -164,7 +161,6 @@ function CreateProject(props) {
                 <div className="field">
                   <p className="control has-icons-left">
                     <textarea
-                      // value={description}
                       name="description"
                       className="textarea"
                       placeholder="Description"
@@ -180,7 +176,6 @@ function CreateProject(props) {
                     <label className="file-label">
                       <input
                         className="file-input"
-                        // value={image}
                         type="file"
                         name="image"
                         onChange={handleChange}
@@ -204,7 +199,6 @@ function CreateProject(props) {
                     <input
                       className="input is-normal"
                       name="timeSpent"
-                      // value={timeSpent}
                       type="number"
                       placeholder="Time spent in hours"
                       onChange={handleChange}
