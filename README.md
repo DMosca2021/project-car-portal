@@ -2,13 +2,7 @@
 
 ## Description
 
-Keep track of your current project cars, their respective budgets, parts lists, and all of the tasks you have left to complete. Upload images of your project and receipts to keep all your vehicle's information in one place.
-
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+This is project car portal. The intention of this app is for users who want to keep track of their overall project development when it comes to project cars specifically. The app can be tailored to fit a multitude of hobbies not just transportation based. In the app users will be able to create a new project providing key information they would like to keep track of. They will be able to then add a vehicle they create to their project so they can keep track of things like the overall budget, how much time has been spent working on the project, when the project was started, and tasks that need to be finished in order for the project to be complete. By keeping track of all of this information pertaining to the current projects, users will be able to better manage their time and finances regarding their hobbies so they spend less time working and more time enjoying their passion.
 
 ## Installation
 
@@ -24,8 +18,7 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Click on deployed link above. Navigate to the `Sign up` button to create an account or `Login` button if you already possess an account. After logging in, use the nav bar to locate the `Create Project` link. There you will be brought to a form to input the information on your project and save it to the server for future management.
 
 ## Screen Shot
 
@@ -38,7 +31,19 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Future Development
 
-If your project has a lot of features, list them here.
+**Currently this app is still in development and more features will be added regularly**
+
+### Features to be added in the future:
+
+- Upload images of your project and receipts of transactions
+- Keep track of budget via inputting your project expenses
+- Have a to-do list so you can keep track of the tasks you have to get your project running
+- Have the ability to add notes to a project so you can jot down quick ideas or make note of important things you find during your project
+
+### End Goal for the APP
+
+In the future I would like to turn this into a social media type app where users can connect with other enthusiasts to help out with eachothers projects. By connecting via social networks users would be able to create a market place amongst their community for services, parts, and group events revolving around their passion.
+
 ## How to Contribute
 
 If anyone who shares a passion for DIY projects and would like to help create something to manage that experience, get in touch with me. I would love to expand on this project so I'll be looking forward to hearing from you! 
