@@ -34,6 +34,45 @@ function Nav() {
     }
   });
 
+  function showCreateForm() {
+    if (Auth.loggedIn()) {
+      return (
+        <Link className="navbar-item" to="/projectForm">
+        {" "}
+        Create Project_<FontAwesomeIcon icon={faTruckPickup} />
+      </Link>
+      );
+    } else {
+      return (
+        <Link
+        className="navbar-item "
+        to="/signup"
+        id="signup-btn"
+      >
+        <FontAwesomeIcon icon={faClipboardList} id="login-icon" />
+        Sign up or... {" "}
+      </Link>
+      )
+    }
+  }
+
+  function showCurrentProjects() {
+    if (Auth.loggedIn()) {
+      return (
+        <Link className="navbar-item" to="/currentProjects">
+        Current Projects_<FontAwesomeIcon icon={faTruckMonster} />
+      </Link>
+      );
+    } else {
+      return (
+        <Link className="navbar-item" to="/login">
+          <FontAwesomeIcon icon={faClipboardCheck} />
+          ...Log in FIRST!
+        </Link>
+      )
+    }
+  }
+
   function showLogOut() {
     if (Auth.loggedIn()) {
       return (
@@ -83,13 +122,8 @@ function Nav() {
               <div className="navbar-item has-dropdown is-hoverable">
                 <a className="navbar-link">More</a>
                 <div className="navbar-dropdown">
-                  <Link className="navbar-item" to="/projectForm">
-                    {" "}
-                    Create Project_<FontAwesomeIcon icon={faTruckPickup} />
-                  </Link>
-                  <Link className="navbar-item" to="/currentProjects">
-                    Current Projects_<FontAwesomeIcon icon={faTruckMonster} />
-                  </Link>
+                  {showCreateForm()}
+                  {showCurrentProjects()}
                   {/* <a className="navbar-item">Contact</a>
                   <hr className="navbar-divider"></hr>
                   <a className="navbar-item">Report an issue</a> */}
