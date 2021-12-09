@@ -86,18 +86,67 @@
 
 #project-card {
   font-size: 25px;
-  max-height: 180px;
-  top: 475px;
+  max-height: 400px;
+  top: 1200px;
   bottom: 0;
-  border: 2px solid black;
-  padding: 5px;
-  margin-bottom: 12px;
-  background-color: honeydew;
+  border-radius: 15px;
+  padding: 15px;
+  margin-bottom: 10px;
   position: relative;
   overflow: auto;
 }
 
+.card-header-title {
+  text-align: center;
+}
 
+#name-text {
+  color: red;
+}
+
+#card-title {
+  color: red;
+}
+
+#date-text {
+  color: black;
+}
+
+#card-budget {
+  color: green;
+}
+
+#card-time {
+  color: blue
+}
+
+#card-description {
+  color: orange;
+}
+
+#card-vehicle {
+  color:purple
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 @media screen and (max-width: 768px) {
   #board-container {

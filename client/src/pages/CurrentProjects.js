@@ -18,7 +18,7 @@ function CurrentProjects() {
           <div className="hero is-halfheight" id="board-container">
                 {loading ? ( <div id="project-text">Loading...</div>) : (
                   <div className="columns is-mobile">
-                    <div className="column is-12">
+                    <div className="column is-8 is-offset-2">
                       <ProjectList projects={projects} />
                     </div>
                   </div>
