@@ -4,15 +4,7 @@ import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faStopwatch,
-  faUpload,
-  faImages,
-  faDollarSign,
-  faCalendarAlt,
-  faHome,
-  faHighlighter,
-} from "@fortawesome/free-solid-svg-icons";
+import { faHome, faHighlighter } from "@fortawesome/free-solid-svg-icons";
 
 function Signup(props) {
   const [formState, setFormState] = useState({
@@ -21,7 +13,7 @@ function Signup(props) {
     email: "",
     password: "",
   });
-  const [addUser, {error} ] = useMutation(ADD_USER);
+  const [addUser, { error }] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -40,7 +32,6 @@ function Signup(props) {
     } catch (e) {
       console.log(e);
     }
-
   };
 
   const handleChange = (event) => {
@@ -84,7 +75,6 @@ function Signup(props) {
               />
             </div>
           </div>
-
           <div className="column is-4 is-offset-4">
             <div className="field">
               <label htmlFor="email">Email:</label>
@@ -112,17 +102,18 @@ function Signup(props) {
             </div>
           </div>
           {error ? (
-          <div className="column is-6 is-offset-3">
-            <p className="error-text">Please Fill out the form or go back to the homepage!</p>
-          </div>
-        ) : null}
+            <div className="column is-6 is-offset-3">
+              <p className="error-text">
+                Please Fill out the form or go back to the homepage!
+              </p>
+            </div>
+          ) : null}
           <div className="column is-full" id="submit-btn">
             <div className="field is-grouped is-grouped-centered">
               <div className="buttons">
                 <button className="button is-dark" type="submit">
                   Submit
                 </button>
-
                 <Link className="button is-light" to="/">
                   <FontAwesomeIcon icon={faHome} />
                   Home

@@ -3,9 +3,11 @@ import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClipboardList } from '@fortawesome/free-solid-svg-icons';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faClipboardList,
+  faHighlighter,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Login(props) {
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -33,43 +35,62 @@ function Login(props) {
   };
 
   return (
-    <div className="hero is-halfheight is-mobile" id="form-container">
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
-        <div className="field">
-          <label htmlFor="email">Email address: </label>
-          <input
-            className="input is-small"
-            placeholder="youremail@test.com"
-            name="email"
-            type="email"
-            id="email"
-            onChange={handleChange}
-          />
+    <div>
+      <div className="columns is-mobile">
+        <div className="column is-10 is-offset-1" id="form-container">
+          <form className="hero is-halfheight" onSubmit={handleFormSubmit}>
+            <h2 className="column is-4 is-offset-5">
+              Login Here _<FontAwesomeIcon icon={faHighlighter} />
+            </h2>
+            <div className="column is-4 is-offset-4">
+              <div className="field">
+                <label htmlFor="email">Email address: </label>
+                <input
+                  className="input is-small"
+                  placeholder="youremail@test.com"
+                  name="email"
+                  type="email"
+                  id="email"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+            <div className="column is-4 is-offset-4">
+              <div className="field">
+                <label htmlFor="pwd">Password: </label>
+                <input
+                  className="input is-small"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  id="pwd"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            {error ? (
+              <div>
+                <p className="error-text">
+                  The provided credentials are incorrect
+                </p>
+              </div>
+            ) : null}
+            <div className="column is-full" id="submit-btn">
+              <div className="field is-grouped is-grouped-centered">
+                <div className="buttons">
+                  <button className="button is-dark" type="submit">
+                    Submit
+                  </button>
+                  <Link className="button is-dark" to="/signup">
+                    <FontAwesomeIcon icon={faClipboardList} /> Go to Signup
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
-        <div className="field">
-          <label htmlFor="pwd">Password: </label>
-          <input
-            className="input is-small"
-            placeholder="******"
-            name="password"
-            type="password"
-            id="pwd"
-            onChange={handleChange}
-          />
-        </div>
-        {error ? (
-          <div>
-            <p className="error-text">The provided credentials are incorrect</p>
-          </div>
-        ) : null}
-        <div className="button">
-          <button type="submit">Submit</button>
-        </div>
-        <div className="button">
-          <Link to="/signup"><FontAwesomeIcon icon={faClipboardList} /> Go to Signup</Link>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }
