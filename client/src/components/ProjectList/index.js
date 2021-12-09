@@ -2,32 +2,39 @@
 import { pathToArray } from "graphql/jsutils/Path";
 import Auth from "../../utils/auth";
 
-
 const ProjectList = ({ projects }) => {
   console.log(projects);
   if (!projects.length) {
     return <h3>No Projects Yet</h3>;
   } else if (!Auth.loggedIn()) {
-    return <h3>Please Log In</h3>
+    return <h3>Please Log In</h3>;
   }
 
+  
+  
   return (
     <div>
       {projects &&
         projects.map((project) => (
           <section className="section" key={project._id} id="project-card">
-            <h3>Lets See if this works?!?</h3>
-            <ul>
+            {/* <h3>Lets See if this works?!?</h3> */}
+            {/* <ul>
               <li>{project.date}</li>
               <li>{project.name}</li>
               <li>{project.description}</li>
               <li>{project.budget}</li>
               <li>{project.timeSpent}</li>
-            </ul>
+            </ul> */}
 
-            {/* <div className="card-image">
-              <figure className="image is-4by3">
+            <div className="card-image">
+              {/* <figure className="image is-4by3">
                 <img src={project.image} alt="Car-pic"></img>
+              </figure> */}
+              <figure className="image is-48x48">
+                <img
+                  src="https://bulma.io/images/placeholders/96x96.png"
+                  alt="Placeholder image"
+                ></img>
               </figure>
             </div>
             <div className="card-content">
@@ -43,7 +50,7 @@ const ProjectList = ({ projects }) => {
               <li>{project.budget}</li>
               <li>{project.timeSpent}</li>
             </ul>
-            <time datetime="2016-1-1">{project.projectDate}</time> */}
+            <time dateTime="2016-1-1">{project.projectDate}</time>
           </section>
         ))}
     </div>
