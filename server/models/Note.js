@@ -14,8 +14,8 @@ const noteSchema = new Schema({
   },
   createdOn: {
     type: Date,
-    default: Date.now
-  }
+    default: Date.now,
+  },
 });
 
 const Note = mongoose.model("Note", noteSchema);

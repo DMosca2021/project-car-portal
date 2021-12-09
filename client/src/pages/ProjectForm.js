@@ -15,7 +15,6 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function CreateProject(props) {
-
   const [formState, setFormState] = useState({
     projectDate: "",
     name: "",
@@ -40,8 +39,7 @@ function CreateProject(props) {
     try {
       const mutationResponse = await addProject({
         variables: {
-          input: formState
-          
+          input: formState,
         },
       });
       console.log(mutationResponse);
@@ -54,14 +52,13 @@ function CreateProject(props) {
 
   const handleChange = (event) => {
     let { name, value, type } = event.target;
-    if (type === "number"){
+    if (type === "number") {
       value = parseInt(value);
     }
     setFormState({
       ...formState,
       [name]: value,
     });
-
 
     // const fileInput = document.querySelector('file-input');
     // fileInput.onchange = () => {
@@ -76,7 +73,9 @@ function CreateProject(props) {
       <div className="columns is-mobile">
         <div className="column is-10 is-offset-1" id="board-container">
           <form className="hero is-halfheight" onSubmit={handleFormSubmit}>
-            <h1 className="column is-3 is-offset-5">Add a project here _<FontAwesomeIcon icon={faHighlighter} /></h1>
+            <h1 className="column is-3 is-offset-5">
+              Add a project here _<FontAwesomeIcon icon={faHighlighter} />
+            </h1>
             <div className="columns is-multiline is-mobile">
               <div className="column is-4 is-offset-2">
                 <div className="field">
@@ -158,7 +157,9 @@ function CreateProject(props) {
                           <FontAwesomeIcon icon={faUpload} />
                         </span>
                       </span>
-                      <span className="file-name" placeholder="File">Coming Soon</span>
+                      <span className="file-name" placeholder="File">
+                        Coming Soon
+                      </span>
                     </label>
                   </div>
                 </div>

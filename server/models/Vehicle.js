@@ -36,7 +36,7 @@ const vehicleSchema = new Schema({
   userID: {
     type: Schema.Types.ObjectId,
     ref: "User",
-  }
+  },
 });
 
 const Vehicle = mongoose.model("Vehicle", vehicleSchema);

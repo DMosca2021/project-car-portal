@@ -2,12 +2,14 @@ import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClipboardList } from "@fortawesome/free-solid-svg-icons";
-import { faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
-import { faTruckPickup } from "@fortawesome/free-solid-svg-icons";
-import { faTruckMonster } from "@fortawesome/free-solid-svg-icons";
-import { faHome, faEnvelopeOpenText } from "@fortawesome/free-solid-svg-icons";
-
+import {
+  faHome,
+  faTruckMonster,
+  faTruckPickup,
+  faClipboardCheck,
+  faClipboardList,
+} from "@fortawesome/free-solid-svg-icons";
+import Logo from "../../assets/pcpLogo.jpg";
 
 function Nav() {
   document.addEventListener("DOMContentLoaded", () => {
@@ -38,21 +40,18 @@ function Nav() {
     if (Auth.loggedIn()) {
       return (
         <Link className="navbar-item" to="/projectForm">
-        {" "}
-        Create Project_<FontAwesomeIcon icon={faTruckPickup} />
-      </Link>
+          {" "}
+          Create Project_
+          <FontAwesomeIcon icon={faTruckPickup} />
+        </Link>
       );
     } else {
       return (
-        <Link
-        className="navbar-item "
-        to="/signup"
-        id="signup-btn"
-      >
-        <FontAwesomeIcon icon={faClipboardList} id="login-icon" />
-        Sign up or... {" "}
-      </Link>
-      )
+        <Link className="navbar-item " to="/signup" id="signup-btn">
+          <FontAwesomeIcon icon={faClipboardList} id="login-icon" />
+          Sign up or...{" "}
+        </Link>
+      );
     }
   }
 
@@ -60,8 +59,9 @@ function Nav() {
     if (Auth.loggedIn()) {
       return (
         <Link className="navbar-item" to="/currentProjects">
-        Current Projects_<FontAwesomeIcon icon={faTruckMonster} />
-      </Link>
+          Current Projects_
+          <FontAwesomeIcon icon={faTruckMonster} />
+        </Link>
       );
     } else {
       return (
@@ -69,7 +69,7 @@ function Nav() {
           <FontAwesomeIcon icon={faClipboardCheck} />
           ...Log in FIRST!
         </Link>
-      )
+      );
     }
   }
 
@@ -100,7 +100,7 @@ function Nav() {
               className="navbar-item"
               href="https://project-car-portal.herokuapp.com/"
             >
-              <img src="https://cdn.w600.comps.canstockphoto.com/auto-mechanic-icon-outline-style-vector-clipart_csp86172306.jpg"></img>
+              <img src={Logo}></img>
             </a>
             <a
               role="button"
@@ -116,8 +116,8 @@ function Nav() {
           </div>
           <div id="navbarBasicExample" className="navbar-menu">
             <div className="navbar-start">
-              <Link className="navbar-item" to="/"><FontAwesomeIcon icon={faHome} />
-                - Home
+              <Link className="navbar-item" to="/">
+                <FontAwesomeIcon icon={faHome} />- Home
               </Link>
               <div className="navbar-item has-dropdown is-hoverable">
                 <a className="navbar-link">More</a>

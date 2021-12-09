@@ -27,9 +27,8 @@ const resolvers = {
     },
 
     getAllVehicles: async () => {
-      return Vehicle.find()
-    } 
-
+      return Vehicle.find();
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
@@ -47,7 +46,7 @@ const resolvers = {
     },
 
     addVehicle: async (parent, args, context) => {
-      let vehicle = new Vehicle(args.input)
+      let vehicle = new Vehicle(args.input);
       await vehicle.save();
       return vehicle;
     },

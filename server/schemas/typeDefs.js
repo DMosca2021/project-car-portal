@@ -1,4 +1,4 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type User {
@@ -6,7 +6,7 @@ const typeDefs = gql`
     firstName: String!
     lastName: String!
     email: String!
-    password: String! 
+    password: String!
     projects: [Project]
   }
 
@@ -44,7 +44,7 @@ const typeDefs = gql`
     projectID: Int
   }
 
-  type Note{
+  type Note {
     _id: ID!
     title: String!
     content: String!
@@ -52,7 +52,7 @@ const typeDefs = gql`
     projectID: Int
   }
 
-  type Todo{
+  type Todo {
     _id: ID!
     content: String!
     createdOn: String!
@@ -95,13 +95,23 @@ const typeDefs = gql`
   }
 
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth # This mutation and resolver works
+    addUser(
+      firstName: String!
+      lastName: String!
+      email: String!
+      password: String!
+    ): Auth # This mutation and resolver works
     addProject(input: ProjectInput): Project
     addVehicle(input: VehicleInput!): Vehicle
     # addTransaction(products: [ID]!): Transaction
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    updateUser(
+      firstName: String
+      lastName: String
+      email: String
+      password: String
+    ): User
     # updateProject(_id: ID!, name: String, description: String, image: String, budget: Int, timeSpent: Float): Project
-    # updateVehicle(type: String, year: Int, make: String, model: String, trimLvl: String, engineDisp: Int): Vehicle 
+    # updateVehicle(type: String, year: Int, make: String, model: String, trimLvl: String, engineDisp: Int): Vehicle
     login(email: String!, password: String!): Auth
   }
 `;

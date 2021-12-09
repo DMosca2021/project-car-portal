@@ -1,5 +1,4 @@
 // import { idbPromise } from "../../utils/helpers";
-import { pathToArray } from "graphql/jsutils/Path";
 import Auth from "../../utils/auth";
 
 const ProjectList = ({ projects }) => {
@@ -21,7 +20,9 @@ const ProjectList = ({ projects }) => {
           >
             <div className="card">
               <header className="card-header">
-                <p className="card-header-title is-centered"><span id="name-text">{project.name}</span></p>
+                <p className="card-header-title is-centered">
+                  <span id="name-text">{project.name}</span>
+                </p>
               </header>
 
               <div className="column is-4 is-offset-4">
@@ -42,18 +43,22 @@ const ProjectList = ({ projects }) => {
                   <div className="media">
                     <div className="media-content">
                       <p className="title has-text-left" id="card-title">
-                        Started on: <span id="date-text">{project.projectDate}</span> 
+                        Started on:{" "}
+                        <span id="date-text">{project.projectDate}</span>
                       </p>
                       <p className="subtitle has-text-left" id="card-budget">
-                        Total Budget: <span id="date-text">{project.budget}</span> 
+                        Total Budget:{" "}
+                        <span id="date-text">{project.budget}</span>
                       </p>
                       <p className="subtitle has-text-left" id="card-time">
-                        Time Spent in hours: <span id="date-text">{project.timeSpent}</span>
+                        Time Spent in hours:{" "}
+                        <span id="date-text">{project.timeSpent}</span>
                       </p>
                     </div>
                   </div>
                   <div className="content has-text-left" id="card-description">
-                    Description: <span id="date-text">{project.description}</span>
+                    Description:{" "}
+                    <span id="date-text">{project.description}</span>
                   </div>
                   <div className="content has-text-left" id="card-vehicle">
                     Vehicle: <span id="date-text">{project.vehicle}</span>

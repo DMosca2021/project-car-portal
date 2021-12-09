@@ -9,11 +9,11 @@ const todoSchema = new Schema({
   },
   createdOn: {
     type: Date,
-    default: Date.now
-  }, 
+    default: Date.now,
+  },
   isComplete: {
-      type: Boolean,
-  }
+    type: Boolean,
+  },
 });
 
 const Todo = mongoose.model("Todo", todoSchema);
