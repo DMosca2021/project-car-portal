@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
-
+const dateFormat = require('../utils/dateFormat');
 const { Schema } = mongoose;
 
 const projectSchema = new Schema({
     projectDate: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        get: (timestamp) => dateFormat(timestamp),
       },
     name: {
       type: String,
