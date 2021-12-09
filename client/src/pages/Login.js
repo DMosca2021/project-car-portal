@@ -37,7 +37,7 @@ function Login(props) {
   return (
     <div>
       <div className="columns is-mobile">
-        <div className="column is-10 is-offset-1" id="form-container">
+        <div className="column is-10 is-offset-1" id="board-container">
           <form className="hero is-halfheight" onSubmit={handleFormSubmit}>
             <h2 className="column is-4 is-offset-5">
               Login Here _<FontAwesomeIcon icon={faHighlighter} />
@@ -70,7 +70,7 @@ function Login(props) {
             </div>
 
             {error ? (
-              <div>
+              <div className="column is-6 is-offset-3">
                 <p className="error-text">
                   The provided credentials are incorrect
                 </p>

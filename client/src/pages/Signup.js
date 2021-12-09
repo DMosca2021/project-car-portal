@@ -44,7 +44,7 @@ function Signup(props) {
 
   return (
     <div className="columns is-mobile">
-      <div className="column is-10 is-offset-1" id="form-container">
+      <div className="column is-10 is-offset-1" id="board-container">
         <form className="hero is-halfheight" onSubmit={handleFormSubmit}>
           <h1 className="column is-4 is-offset-5">
             Add a project here _<FontAwesomeIcon icon={faHighlighter} />
