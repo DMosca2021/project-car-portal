@@ -21,20 +21,26 @@ function Signup(props) {
     email: "",
     password: "",
   });
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser, {error} ] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await addUser({
-      variables: {
-        firstName: formState.firstName,
-        lastName: formState.lastName,
-        email: formState.email,
-        password: formState.password,
-      },
-    });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
+
+    try {
+      const mutationResponse = await addUser({
+        variables: {
+          firstName: formState.firstName,
+          lastName: formState.lastName,
+          email: formState.email,
+          password: formState.password,
+        },
+      });
+      const token = mutationResponse.data.addUser.token;
+      Auth.login(token);
+    } catch (e) {
+      console.log(e);
+    }
+
   };
 
   const handleChange = (event) => {
@@ -105,14 +111,19 @@ function Signup(props) {
               />
             </div>
           </div>
+          {error ? (
+          <div className="column is-6 is-offset-3">
+            <p className="error-text">Please Fill out the form or go back to the homepage!</p>
+          </div>
+        ) : null}
           <div className="column is-full" id="submit-btn">
             <div className="field is-grouped is-grouped-centered">
               <div className="buttons">
                 <button className="button is-dark" type="submit">
                   Submit
                 </button>
-                
-                <Link className="button is-dark" to="/">
+
+                <Link className="button is-light" to="/">
                   <FontAwesomeIcon icon={faHome} />
                   Home
                 </Link>
