@@ -75,24 +75,6 @@
   overflow: auto;
 }
 
-#form-container {
-  height: 500px;
-  width: 1200px;
-  font-family: "Permanent Marker", cursive;
-  color: red;
-  font-size: 20px;
-  margin-top: 50px;
-  background-position: center;
-  background-color: white;
-  background-image: url(./assets/whiteboard-bg-img.jpg);
-  justify-content: center;
-  align-items: center;
-  border: 9px groove rgba(85, 85, 85, 0.616);
-  border-radius: 2px;
-  box-shadow: 0px 12px 2px 1px rgba(0, 0, 255, 0.45);
-  overflow: auto;
-}
-
 .file-name {
   color: grey;
 }
@@ -104,7 +86,7 @@
 
 #project-card {
   font-size: 25px;
-  /* max-height: 175px; */
+  max-height: 180px;
   top: 475px;
   bottom: 0;
   border: 2px solid black;
